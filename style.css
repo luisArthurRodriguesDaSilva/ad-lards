@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Rubik+Bubbles&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Overlock&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +10,7 @@
 
 body{
     font-size: 100%;
-background: radial-gradient(circle, rgba(0,142,255,1) 0%, rgb(204, 223, 226) 100%);
+background: radial-gradient(circle, rgb(255, 255, 255) 1%, rgb(0, 221, 255) 100%);
 }
 
 .cabeçalho{
@@ -16,17 +18,17 @@ background: radial-gradient(circle, rgba(0,142,255,1) 0%, rgb(204, 223, 226) 100
     flex-direction:row;
     align-items: center;
     justify-content:space-around;
-    padding: 50px;
+    padding: 20px;
     
 }
 .cabeçalho-m{
     display: flex;
-    gap: 50px;
+    gap: 10px;
 }
 
 .logos-img{
     height: 35px;
-    transition: all 0.8s;
+    transition: all 2s;
     border-radius: 10px;
     
 }
@@ -42,25 +44,30 @@ background: radial-gradient(circle, rgba(0,142,255,1) 0%, rgb(204, 223, 226) 100
 }
 .cabeçalho-m1{
     font-family: 'Courier New', Courier, monospace;
-    color: brown;
+    color: rgb(0, 0, 0);
     font-size: 30px;
 }
 .miolo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
     border-top: 1px solid rgb(0, 0, 0);
     margin-bottom: 50px;
 }
 
 .primeira-seção{
     display: flex;
-    flex-direction: row; /*é o padrão mas a balerini usa de garantia ent vo usar tbm*/
+    flex-direction:row;
     align-items: center;
     justify-content:space-around;
+    padding: 50px;
 }
 
 .parte_escrita{
     display: flex;
     flex-direction:column;
-    gap: 16px;
+    gap: 20px;
 }
 .primeiro_da_primeira{
     font-family: 'Oswald', sans-serif;
@@ -71,40 +78,25 @@ background: radial-gradient(circle, rgba(0,142,255,1) 0%, rgb(204, 223, 226) 100
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     
 }
-.pequeno{
-    font-size: 10px;
+.terceiro_da_primeira{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}   
+.endereço{
+    color: inherit;
 }
-.botão{
-    background-color: rgb(74, 214, 214);
-    cursor: pointer;
-    transition: all 2s;
-    width: 100px;
-    height: 50px;
-    border: none;
-    box-shadow: 5px 5px 50px rgb(0, 158, 124);
-    border-radius: 20px;
-    font-family: 'Rubik Bubbles', cursive;
-    color: antiquewhite ;
-    transition: all 2s;
-}
-.botão:hover{
-    transition: all 2s;
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(69,156,252,1) 100%);
-    /*border: 10px solid #136497;
-    border-radius: 20%;*/
-
-    }
-
-.img_primeira_seção{
-    height: 200px;
-    padding-top: 100px;
-}
-.img_primeira_seção:hover{
-    border: 10px solid #136497;
-    border-radius: 50%;
+.parte_da_direita{
+    font-family: 'Comfortaa', cursive;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    
 
 }
-
+.cartada{
+    display: flex;
+    flex-direction: row;
+}
 .segunda-seção{
      display: flex;
      flex-direction: column;
