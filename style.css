@@ -9,9 +9,13 @@
 }
 
 body{
-    font-size: 100%;
-background: radial-gradient(circle, rgb(255, 255, 255) 1%, rgb(0, 221, 255) 100%);
-}
+    display: flex;
+    flex-direction: column;
+    font-size: 100%;background: rgb(255,255,255);
+    background: -moz-linear-gradient(138deg, rgba(255,255,255,0.49343487394957986) 0%, rgba(0,255,252,0.8715861344537815) 100%);
+    background: -webkit-linear-gradient(138deg, rgba(255,255,255,0.49343487394957986) 0%, rgba(0,255,252,0.8715861344537815) 100%);
+    background: linear-gradient(138deg, rgba(255,255,255,0.49343487394957986) 0%, rgba(0,255,252,0.8715861344537815) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#00fffc",GradientType=1);}
 
 .cabeçalho{
     display: flex;
@@ -52,7 +56,7 @@ background: radial-gradient(circle, rgb(255, 255, 255) 1%, rgb(0, 221, 255) 100%
     flex-direction: column;
     align-items: center;
     justify-content:space-around;
-    border-top: 1px solid rgb(0, 0, 0);
+    border-top: 0.1px solid rgb(85, 128, 108);
     margin-bottom: 50px;
 }
 
@@ -61,7 +65,9 @@ background: radial-gradient(circle, rgb(255, 255, 255) 1%, rgb(0, 221, 255) 100%
     flex-direction:row;
     align-items: center;
     justify-content:space-around;
-    padding: 50px;
+    padding: 75px;
+    padding-top: 100px;
+    gap:300px
 }
 
 .parte_escrita{
@@ -81,7 +87,7 @@ background: radial-gradient(circle, rgb(255, 255, 255) 1%, rgb(0, 221, 255) 100%
 .terceiro_da_primeira{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }   
-.endereço{
+.endereço,.credito{
     color: inherit;
 }
 .parte_da_direita{
@@ -90,13 +96,8 @@ background: radial-gradient(circle, rgb(255, 255, 255) 1%, rgb(0, 221, 255) 100%
     display: flex;
     flex-direction: column;
     gap: 50px;
-    
+}
 
-}
-.cartada{
-    display: flex;
-    flex-direction: row;
-}
 .segunda-seção{
      display: flex;
      flex-direction: column;
@@ -104,10 +105,15 @@ background: radial-gradient(circle, rgb(255, 255, 255) 1%, rgb(0, 221, 255) 100%
      align-items: center;
      justify-content:space-around;
 }
+.titulo_segunda_seção:hover{
+    max-width: 500px;
+    transition: all 2s;
+}
 .titulo_segunda_seção{
+    
     border-top: 1px solid rgb(0, 0, 0);
- 
-    padding-top: 10px;
+    
+    padding-top: 1px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 27px;
     font-weight: 800;
@@ -116,6 +122,22 @@ background: radial-gradient(circle, rgb(255, 255, 255) 1%, rgb(0, 221, 255) 100%
     font-size: 20px;
     font-weight: 500;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.marcas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    gap: 80px;
+
+}
+.foto_de_marca{
+    height: 100px;
+    transition: 0.3s all;
+
+}
+.foto_de_marca:hover{
+    height: 120px;
 }
 /*
 .rodapé{
