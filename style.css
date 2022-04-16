@@ -14,7 +14,7 @@ body{
     font-size: 100%;background: rgb(255,255,255);
     background: -moz-linear-gradient(138deg, rgba(255,255,255,0.49343487394957986) 0%, rgba(0,255,252,0.8715861344537815) 100%);
     background: -webkit-linear-gradient(138deg, rgba(255,255,255,0.49343487394957986) 0%, rgba(0,255,252,0.8715861344537815) 100%);
-    background: linear-gradient(138deg, rgba(255,255,255,0.49343487394957986) 0%, rgba(0,255,252,0.8715861344537815) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.49343487394957986) 25%, rgba(0,255,252,0.8715861344537815) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#00fffc",GradientType=1);}
 
 .cabeçalho{
@@ -23,15 +23,18 @@ body{
     align-items: center;
     justify-content:space-around;
     padding: 20px;
-    
+    padding-bottom: 0px;
+
 }
+
 .cabeçalho-m{
     display: flex;
     gap: 10px;
 }
 
 .logos-img{
-    height: 35px;
+    position: static;
+    height: 30px;
     transition: all 2s;
     border-radius: 10px;
     
@@ -41,7 +44,6 @@ body{
     border-radius: 25%;
     background: linear-gradient(0deg, rgba(0, 255, 30, 0.534) 0%, rgba(4, 255, 0, 0.774) 100%);}
 #insta:hover{
-
     border: 1px solid #d833af;
     border-radius: 8px;
     background: linear-gradient(0deg, rgba(255,255,255,0.6306897759103641) 0%, rgba(255,234,0,0.7231267507002801) 22%, rgba(255,0,241,0.47102591036414565) 58%, rgba(253,45,60,0.8211659663865546) 100%);
@@ -49,15 +51,16 @@ body{
 .cabeçalho-m1{
     font-family: 'Courier New', Courier, monospace;
     color: rgb(0, 0, 0);
-    font-size: 30px;
+    font-size: 25px;
 }
 .miolo{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:space-around;
-    border-top: 0.1px solid rgb(85, 128, 108);
-    margin-bottom: 50px;
+    gap: 50px;
+    padding: 0px;
+    padding-top: 50px;
 }
 
 .primeira-seção{
@@ -65,8 +68,8 @@ body{
     flex-direction:row;
     align-items: center;
     justify-content:space-around;
-    padding: 75px;
-    padding-top: 100px;
+    padding: 0px;
+    padding-top: 0px;
     gap:300px
 }
 
@@ -83,12 +86,14 @@ body{
 .segundo_da_primeira{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     
-}
-.terceiro_da_primeira{
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}   
-.endereço,.credito{
+}  
+.endereço{
     color: inherit;
+    font-size: 25px;
+}
+.credito{
+    color: inherit;
+    font-size: 15px;
 }
 .parte_da_direita{
     font-family: 'Comfortaa', cursive;
@@ -113,7 +118,7 @@ body{
     
     border-top: 1px solid rgb(0, 0, 0);
     
-    padding-top: 1px;
+    padding-top: 0px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 27px;
     font-weight: 800;
@@ -132,25 +137,21 @@ body{
 
 }
 .foto_de_marca{
-    height: 100px;
+    max-height: 100px;
+    max-width: 100px;
     transition: 0.3s all;
 
 }
 .foto_de_marca:hover{
-    height: 120px;
-}
-/*
+    max-height: 120px;
+    max-width: 120px;
+    background: rgb(167,44,44);
+    background: linear-gradient(45deg, rgba(224, 205, 205, 0.137) 28%, rgba(0, 255, 251, 0.068) 100%);
+    border-bottom: #d833af;
+}   
+
 .rodapé{
-    background:linear-gradient(90deg, rgb(60, 76, 88) 0%, rgb(204, 223, 226) 100%);
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-}
-.rodapé{
-    display: block;
-}*/
-.img_rodapé
-{
-    display: block;
-    margin:0 auto;
+    position: static;
+    border-top: 1px solid rgb(161, 209, 228)
+    
 }
