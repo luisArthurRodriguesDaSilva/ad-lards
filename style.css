@@ -14,7 +14,7 @@ body{
     font-size: 100%;background: rgb(255,255,255);
     background: -moz-linear-gradient(138deg, rgba(255,255,255,0.49343487394957986) 0%, rgba(0,255,252,0.8715861344537815) 100%);
     background: -webkit-linear-gradient(138deg, rgba(255,255,255,0.49343487394957986) 0%, rgba(0,255,252,0.8715861344537815) 100%);
-    background: linear-gradient(45deg, rgba(255,255,255,0.49343487394957986) 0%, rgba(0,255,252,0.8715861344537815) 100%);
+    background: linear-gradient(110deg, rgba(255,255,255,0.49343487394957986) 0%, rgba(0,255,252,0.8715861344537815) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#00fffc",GradientType=1);}
 
 .cabeçalho{
@@ -22,13 +22,11 @@ body{
     flex-direction:row;
     align-items: center;
     justify-content:space-around;
-    padding: 0px;
-    border-top: 1px solid rgb(161, 209, 228)
-    
+    padding: 20px;
+    padding-bottom: 0px;
+
 }
-.cabeçalho-img:hover{
-    width: 105px;
-}
+
 .cabeçalho-m{
     display: flex;
     gap: 10px;
@@ -36,7 +34,7 @@ body{
 
 .logos-img{
     position: static;
-    height: 35px;
+    height: 30px;
     transition: all 2s;
     border-radius: 10px;
     
@@ -53,15 +51,16 @@ body{
 .cabeçalho-m1{
     font-family: 'Courier New', Courier, monospace;
     color: rgb(0, 0, 0);
-    font-size: 30px;
+    font-size: 25px;
 }
 .miolo{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:space-around;
-    border-top: 0.1px solid rgb(85, 128, 108);
-    margin-bottom: 50px;
+    gap: 50px;
+    padding: 0px;
+    padding-top: 50px;
 }
 
 .primeira-seção{
@@ -69,8 +68,8 @@ body{
     flex-direction:row;
     align-items: center;
     justify-content:space-around;
-    padding: 50px;
-    padding-top: 100px;
+    padding: 0px;
+    padding-top: 0px;
     gap:300px
 }
 
@@ -87,12 +86,14 @@ body{
 .segundo_da_primeira{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     
-}
-.terceiro_da_primeira{
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}   
-.endereço,.credito{
+}  
+.endereço{
     color: inherit;
+    font-size: 25px;
+}
+.credito{
+    color: inherit;
+    font-size: 15px;
 }
 .parte_da_direita{
     font-family: 'Comfortaa', cursive;
@@ -117,7 +118,7 @@ body{
     
     border-top: 1px solid rgb(0, 0, 0);
     
-    padding-top: 1px;
+    padding-top: 0px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 27px;
     font-weight: 800;
@@ -151,4 +152,6 @@ body{
 
 .rodapé{
     position: static;
+    border-top: 1px solid rgb(161, 209, 228)
+    
 }
