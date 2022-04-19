@@ -15,7 +15,8 @@ body{
     background: -moz-linear-gradient(138deg, rgba(255,255,255,0.49343487394957986) 0%, rgba(0,255,252,0.8715861344537815) 100%);
     background: -webkit-linear-gradient(138deg, rgba(255,255,255,0.49343487394957986) 0%, rgba(0,255,252,0.8715861344537815) 100%);
     background: linear-gradient(135deg, rgba(255,255,255,0.49343487394957986) 25%, rgba(0,255,252,0.8715861344537815) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#00fffc",GradientType=1);}
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#00fffc",GradientType=1);
+}
 
 .cabeçalho{
     display: flex;
@@ -78,15 +79,6 @@ body{
     flex-direction:column;
     gap: 20px;
 }
-.primeiro_da_primeira{
-    font-family: 'Oswald', sans-serif;
-    font-size: 100px;
-    font-weight:50;
-}
-.segundo_da_primeira{
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    
-}  
 .endereço{
     color: inherit;
     font-size: 25px;
@@ -101,6 +93,9 @@ body{
     display: flex;
     flex-direction: column;
     gap: 50px;
+}
+.cartoes{
+    max-width: 15vw;
 }
 
 .segunda-seção{
@@ -152,6 +147,72 @@ body{
 
 .rodapé{
     position: static;
-    border-top: 1px solid rgb(161, 209, 228)
+    border-top: 1px solid rgb(161, 209, 228);
+}
+
+@media (orientation:portrait) 
+{
+
+body{
+        background: linear-gradient(180deg, rgba(255,255,255,0.49343487394957986) 25%, rgba(0,255,252,0.8715861344537815) 100%);
+}
+.miolo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.foto_luar{
+    max-width: 79vw;
+    max-height: 79vh;
+}
+
+.primeira-seção{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-inline-end: 10%;
+    margin-inline-start: 10%;
+}
+.parte_da_direita{
+    max-width:100%;
+    text-align: center;
+    font-size: 7vw;
+    gap: 10vh;
+    padding-bottom: 10vh;
+}
+.cartoes{
+    max-width: 50vw;
+    max-height: 50vw;
+}
+.endereço{
+    border-radius: 1vw rgb(255, 0, 0);
+    color: inherit;
+    font-size: 5vw;
+}
+
+
+.marcas{
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+.foto_de_marca{
+    max-width: 50vw;
+    max-height: 50vw;
+    padding: 0vh;
+}
+.foto_de_marca:hover{
+    max-width: 50vw;
+    max-height: 50vw;
+    padding: 0vh;
+}   
+.rodapé{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content:space-around;
+}
     
 }
