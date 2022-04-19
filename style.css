@@ -195,12 +195,19 @@ body{
 .marcas{
     display: flex;
     flex-direction: column;
-    gap: 3vh;
+    gap: 0vh;
 }
 .foto_de_marca{
     max-width: 50vw;
     max-height: 50vw;
     padding: 0vh;
+}
+.remendo{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    width: 50vw;
+    height: 50vw;
 }
 .foto_de_marca:hover{
     max-width: 50vw;
@@ -213,6 +220,23 @@ body{
     gap: 10px;
     align-items: center;
     justify-content:space-around;
+}
+.cabeçalho-m1{
+    display: flex;
+    gap: 10px;
+    font-size: 8vw;
+}
+
+.logos-img{
+    position: static;
+    height: 8vw;
+    transition: all 2s;
+    border-radius: 10px;
+    
+}
+.credito{
+    color: inherit;
+    font-size: 3.5vw;
 }
     
 }
