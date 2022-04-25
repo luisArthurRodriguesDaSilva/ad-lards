@@ -1,19 +1,11 @@
-document.addEventListener("mousemove",f);
-const corpo = document.querySelector("body"); 
-var f=(e)=>{
-        /*const corpo=document.querySelector("#body"); */
+const bode = document.querySelector("#body");
+bode.addEventListener('mousemove', e => {
         var x = e.clientX;
         var y = e.clientY;
-        console.log("-------------------")
-        console.log(x);
-        console.log(y);
-        console.log("__")
-        fundo = ("linear-gradient(180deg, rgba(255,255,255,0.49343487394957986) 77%, rgba(0,255,252,0.8715861344537815) 100%);");
-        console.log(fundo)
-        console.log(corpo.style['background']);
-        corpo.style["background"] = fundo;
-        console.log("___")
-        console.log(fundo)
-        console.log(corpo.style.background);
-        console.log("-------------------")
-        }
+        console.log(x + " e " + y );
+        gradient="linear-gradient(" + ((Math.atan(x-(screen.width/2),y-(screen.height/2)))*360)/3.14+ "deg, rgba(255,255,255,0.19343487394957986) 25%, rgba(0,255,252,0.8715861344537815) 100%)";
+        bode.style.backgroundImage= gradient;
+        bode.style.MozBackground = gradient;
+        bode.style.WebkitBackground = gradient;
+        bode.style.background = gradient;
+});
