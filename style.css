@@ -10,7 +10,10 @@
     display: flex;
     flex-direction: column;
     font-size: 100%;
+    background: #02f5f5;
 }
+
+
 .cabeçalho{
     display: flex;
     flex-direction:row;
@@ -119,18 +122,20 @@
     max-height: 100px;
     max-width: 100px;
     transition: 0.3s all;
+    margin-bottom: 10px;
 
 }
 .foto_de_marca:hover{
-    max-height: 120px;
-    max-width: 120px;
-    background: rgb(167,44,44);
+    margin: 0px;
+    max-height: 105px;
+    max-width: 105px;
+    /*background: rgb(167,44,44);
     background: linear-gradient(45deg, rgba(224, 205, 205, 0.137) 28%, rgba(0, 255, 251, 0.068) 100%);
-    border-bottom: #d833af;
+    */border-bottom: #d833af;
 }   
 
 .rodapé{
-    position: static;
+    position: relative;
     border-top: 1px solid rgb(161, 209, 228);
     background:rgba(119, 146, 182, 0.445);
 }
@@ -196,8 +201,8 @@
     height: 50vw;
 }
 .foto_de_marca:hover{
-    max-width: 50vw;
-    max-height: 50vw;
+    max-width: 5vw;
+    max-height: 5vw;
     padding: 0vh;
 }   
 .rodapé{

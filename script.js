@@ -1,6 +1,7 @@
 const bode = document.querySelector("#body");
 bode.addEventListener('mousemove', e => {
-        if(window.innerHeight<window.innerWidth){
+        if(window.innerHeight<window.innerWidth)
+        {
         var x = e.clientX;
         var y = e.clientY;
         console.log(x + " e " + y );
@@ -12,12 +13,12 @@ bode.addEventListener('mousemove', e => {
         bode.style.WebkitBackground = gradient;
         bode.style.background = gradient;
         }
-        else{
+        else
+        {
                 gradient="linear-gradient(180deg, rgba(255,255,255,0.1) 0%,rgba(0,206,255,0.2) 50% ,rgba(0,255,252,0.7715861344537815) 100%)";
                 bode.style.backgroundImage= gradient;
                 bode.style.MozBackground = gradient;
                 bode.style.WebkitBackground = gradient;
                 bode.style.background = gradient;
-
         }
 });
