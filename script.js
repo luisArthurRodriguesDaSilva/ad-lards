@@ -4,6 +4,10 @@ const main = document.querySelector('main');
 
 const createProduct = () => {
   for(let i = 0; i < 50; i+=1){
+
+    let text = `olá, desejo comprar o produto ${i%3 + 1}`
+    let wpptext = text.replaceAll(' ','%20')
+
     main.innerHTML += 
     `
     <section>
@@ -11,9 +15,9 @@ const createProduct = () => {
         <img src="${pathImgs[i%3]}" alt="">
     </div>
     <div class="baixo">
-        <button class="btn btn-sm">
+        <a href="https://wa.me/5522998947260?text=${wpptext}" target="_blank" class="buy-btn btn btn-sm" id="produto-${i}">
             comprar
-        </button>
+        </a>
     </div>
 </section>
 `;
@@ -21,3 +25,5 @@ const createProduct = () => {
 }
 
 createProduct();
+
+document.querySelectorAll('.buy-btn')

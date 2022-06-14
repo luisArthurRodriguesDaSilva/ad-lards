@@ -4,9 +4,9 @@
 }
 
 header{
-
   height: 55px;
   position: fixed;
+  border-radius: 0px 0px 5px 5px;
 }
 
 main{
@@ -19,7 +19,7 @@ main{
 }
 
 section{
-  margin: 1.5vh 1vw 1vh 1vw;
+  margin: 1.5vh 1vw 2vh 1vw;
   width: 95%;
   height:fit-content; /*future fit content*/
   background-color: var(--secondary-color);
