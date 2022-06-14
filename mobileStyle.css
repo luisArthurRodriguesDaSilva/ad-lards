@@ -1,77 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
-*{
-  font-family: 'Comfortaa', cursive;
-  text-decoration: none;
-  margin: 0%;
-}
-
-:root{
-  --main-color : rgb(153, 248, 255);
-  --secondary-color : rgba(255, 255, 255, 0.945);
-  --third-color : #c3dbf2;
-  --fouth-color : #d7e7f6;
-  --fivth-color : #79b2de;
-}
-
-body,main,section,.limitator,.cima,.baixo{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-body{
-  background-color:var(--main-color);
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 header{
-  background-color: var(--secondary-color);
-  position: fixed;
+
   height: 55px;
-  width: 100vw;
-}
-
-#header-container
-{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content:space-around;
-}
-
-#header-container > img{
-  height: 90%;
-}
-
-.mine-btn{
-  background-color: var(--main-color);
-}
-
-.btn-group ul {
-  background-color: rgb(139, 238, 255);
-}
-
-.material-symbols-outlined {
-  line-height: -5;
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 200,
-  'opsz' 48
+  position: fixed;
 }
 
 main{
-  justify-content: space-around;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 60px;
-  background-color: var(--third-color);
-  height: fit-content; /*future fit content*/
   width: 95vw;
-  border-radius: 10px;
 }
 
 section{
-  margin: 1vw;
+  margin: 1.5vh 1vw 1vh 1vw;
   width: 95%;
   height:fit-content; /*future fit content*/
   background-color: var(--secondary-color);
@@ -80,32 +28,10 @@ section{
   border-bottom: none;
 }
 
-.cima,.baixo{
-  align-items: center;
-  align-content: center;
-  justify-content: space-around;
-}
-
-.cima{
-  flex: 1 1;
-  width: 100%;
-}
-
 .cima img{
-  width: 30vw;
+  width: 35vw;
 }
 
-.baixo{
-  box-sizing: content-box;
-  height: 35px;
-  background-color: var(--fouth-color);
-  width: 100.01%;
-  border-radius: 0px 0px 8px 8px;
-  border-bottom: var(--fivth-color) solid 3px;
-}
 
-.baixo button{
-  padding: none;
-  border: none;
-  font-weight: 900;
-}
+
+
