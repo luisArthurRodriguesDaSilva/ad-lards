@@ -33,6 +33,20 @@ section{
   max-height: 38vh;
 }
 
+@media (min-width:700px){
+  .baixo{
+    height: 10vw;
+  }
+
+  .baixo a {
+    font-size: 4vw;
+  }
+  #wpp-logo {
+    min-width: 5vw;
+    min-height: 5vw;
+  }
+}
+
 
 
 

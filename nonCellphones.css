@@ -42,4 +42,10 @@ border-bottom: var(--fivth-color) 1px solid;
     font-size:15px;
   }
   
+  @media (max-height:537px) {
+    #wpp-logo{
+      display:none;
+    }
+  }
+
 }
