@@ -1,12 +1,11 @@
-import tabelinha from './relat.js';
-const ProductsQuantity = 7;
+import tabelinha from './test.js';
 const main = document.querySelector('main');
 
 const createProduct = () => {
   for(let i = 0; i < tabelinha.adressesOfImg.length; i+=1){
 
     let text = `olá, desejo comprar o produto ${tabelinha.names[i]}`;
-    let wpptext = text.replaceAll(' ','%20')
+    let wpptext = text.replaceAll(' ','%20');
 
     main.innerHTML += 
     `
