@@ -31,3 +31,15 @@ border-bottom: var(--fivth-color) 1px solid;
   margin: 5%;
   height: 25vh;
 }
+
+.baixo a{
+  max-width: 90%;
+  max-height: 95%;
+}
+
+@media (max-width:640px){
+  .baixo a{
+    font-size:15px;
+  }
+  
+}
