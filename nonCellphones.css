@@ -1,8 +1,36 @@
+body{
+  zoom: 1;
+  background: var(--main-linear-gradient);
+  background-size: 400% 400%;
+  background-repeat: no-repeat;
+  animation: gradient 10s ease infinite;
+}
 
-.cima{
+header{
+background-color: rgba(255, 255, 255, 0.904);
+border-bottom: var(--fivth-color) 1px solid;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 10% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+section{
+  height: 40vh;
+  align-self: center;
+  width: 29%;
 }
 
 .cima img{
-  margin: 5%;
-  height: 25vh;
+  max-width: 25vh;
+  width: 200px;
+  min-width: 150px;
 }

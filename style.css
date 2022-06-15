@@ -8,10 +8,12 @@
 
 :root{
   --main-color : rgb(153, 248, 255);
-  --secondary-color : rgba(255, 255, 255, 0.945);
+  --secondary-color : rgb(255, 255, 255);
   --third-color : #c3dbf2;
   --fouth-color : #d7e7f6;
   --fivth-color : #79b2de;
+  --transparent: rgba(0,0,0,0);
+  --main-linear-gradient : linear-gradient( 102.4deg,  rgba(250,250,250,1) 20%,  rgba(24,250,255,1) 100.3% );
 }
 
 body,section,.limitator,.cima,.baixo{
@@ -22,6 +24,7 @@ body,section,.limitator,.cima,.baixo{
 
 body{
   background-color:var(--main-color);
+  overflow-x: hidden;
 }
 
 header{
@@ -70,17 +73,17 @@ main{
   background-color: var(--third-color);
   height: fit-content; /*future fit content*/
   width: 95vw;
+  border: var(--fivth-color) solid 2px;
   border-radius: 10px;
 }
 
 section{
-  margin: 5vh 1vh 1vh 1vh;
-  width: 25%;
-  height:fit-content; /*future fit content*/
+  box-sizing: border-box;
   background-color: var(--secondary-color);
   border-radius: 10px;
   border: var(--fivth-color) solid ;
   border-bottom: none;
+  margin: 1vh;
 }
 
 
@@ -100,24 +103,43 @@ section{
 }
 
 .baixo{
-  box-sizing: content-box;
-  height: 35px;
+  height: 40px;
   background-color: var(--fouth-color);
   width: 100%;
-  border-radius: 0px 0px 8px 8px;
+  border-radius: 0px 0px 8.5px 8.5px;
   border-bottom: var(--fivth-color) solid 3px;
 }
 
-.baixo button{
+.baixo a{
+  width: max-content;
   margin:100%;
   padding: none;
   border: none;
+  max-height: 85%;
   font-weight: 900;
   background-color: rgba(235, 181, 65, 0.986);
   border: solid 2px rgb(102, 81, 14);
 }
 
-.baixo button:hover{
+.baixo #wpp-logo{
+  margin-bottom: 3px;
+}
+
+#insta-logo{
+  display: inline;
+  max-height: 15px;
+  margin-left: 4px;
+}
+
+#wpp-logo{
+  display: inline;
+  max-width: 15px;
+  max-height: 15px;
+  margin-left: 4px;
+  align-self: flex-start;
+}
+
+.baixo a:hover{
   background-color: rgba(238, 190, 85, 0.986);
   box-shadow: 0px 1px 2px hsla(41, 67%, 39%, 0.637);
 }
