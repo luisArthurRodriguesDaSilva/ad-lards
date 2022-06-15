@@ -37,9 +37,14 @@ border-bottom: var(--fivth-color) 1px solid;
   max-height: 95%;
 }
 
-@media (max-width:640px){
+@media (max-width:700px){
   .baixo a{
     font-size:15px;
+  }
+
+  .cima img{  
+    min-height: 0%;
+    max-width: 80vw;
   }
   
   @media (max-height:537px) {
