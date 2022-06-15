@@ -23,14 +23,11 @@ border-bottom: var(--fivth-color) 1px solid;
   }
 }
 
-section{
-  height: 40vh;
-  align-self: center;
-  width: 29%;
+.btn-sm{
+  font-size: larger;
 }
 
 .cima img{
-  max-width: 25vh;
-  width: 200px;
-  min-width: 150px;
+  margin: 5%;
+  height: 25vh;
 }
