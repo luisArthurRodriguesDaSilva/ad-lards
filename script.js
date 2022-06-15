@@ -1,4 +1,4 @@
-import tabelinha from './test.js';
+import tabelinha from './relat.js';
 const main = document.querySelector('main');
 
 const createProduct = () => {

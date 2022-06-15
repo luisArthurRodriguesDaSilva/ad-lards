@@ -1,11 +1,11 @@
 
 import os
+adresses = list(map(lambda x: (str('./imagens/' + x)) ,os.listdir('./imagens')));
 
-adresses = list(map(lambda x: (str('./imagens/' + x)) ,os.listdir('./imagens')))
-print(adresses)
+names=list(map(lambda x: (str(x.split('.')[0])) ,os.listdir('./imagens')));
 
 print(os.listdir('imagens'))
-with open("test.js", 'w') as file:
+with open("relat.js", 'w') as file:
     file.write(
         """const tabelinha = {
   'adressesOfImg' :""" 
@@ -14,14 +14,7 @@ with open("test.js", 'w') as file:
 
   ,
 
-  'names' : [
-
-    'nome0',
-    'nome1',
-    'nome2',
-    'nome3',
-
-  ]
+  'names' : """ + str(names) + """
 };
 
 export default tabelinha;
