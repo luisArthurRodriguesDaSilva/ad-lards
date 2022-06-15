@@ -29,7 +29,8 @@ section{
 }
 
 .cima img{
-  width: 35vw;
+  max-width: 35vw;
+  max-height: 38vh;
 }
 
 

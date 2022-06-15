@@ -79,13 +79,11 @@ main{
 
 section{
   box-sizing: border-box;
-  margin: 5vh 1vh 1vh 1vh;
-  width: 25%;
-  height:fit-content; /*future fit content*/
   background-color: var(--secondary-color);
   border-radius: 10px;
   border: var(--fivth-color) solid ;
   border-bottom: none;
+  margin: 1vh;
 }
 
 
@@ -101,7 +99,7 @@ section{
 }
 
 .baixo{
-  height: 35px;
+  height: 40px;
   background-color: var(--fouth-color);
   width: 100%;
   border-radius: 0px 0px 8.5px 8.5px;
@@ -109,13 +107,31 @@ section{
 }
 
 .baixo a{
+  width: max-content;
   margin:100%;
   padding: none;
   border: none;
-  max-height: 90%;
+  max-height: 85%;
   font-weight: 900;
   background-color: rgba(235, 181, 65, 0.986);
   border: solid 2px rgb(102, 81, 14);
+}
+
+.baixo #wpp-logo{
+  margin-bottom: 3px;
+}
+
+#insta-logo{
+  display: inline;
+  max-height: 23px;
+}
+
+#wpp-logo{
+  display: inline;
+  max-width: 15px;
+  max-height: 15px;
+  margin-left: 4px;
+  align-self: flex-start;
 }
 
 .baixo a:hover{
