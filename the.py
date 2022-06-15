@@ -5,7 +5,7 @@ adresses = list(map(lambda x: (str('./imagens/' + x)) ,os.listdir('./imagens')))
 print(adresses)
 
 print(os.listdir('imagens'))
-with open("test.js", 'a') as file:
+with open("test.js", 'w') as file:
     file.write(
         """const tabelinha = {
   'adressesOfImg' :""" 
