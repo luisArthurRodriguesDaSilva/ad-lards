@@ -8,13 +8,10 @@ print(os.listdir('imagens'))
 with open("relat.js", 'w') as file:
     file.write(
         """const tabelinha = {
-  'adressesOfImg' :""" 
-  + str(adresses) +
-   """
-
+            
+  'adressesOfImg' :[""" + "'" + str("',\n'".join(adresses)) + "'" + """]
   ,
-
-  'names' : """ + str(names) + """
+  'names' : [""" + "'" + str("',\n'".join(names)) + "'" + """]
 };
 
 export default tabelinha;
