@@ -78,6 +78,9 @@ main{
 }
 
 section{
+  margin: 5vh 1vh 1vh 1vh;
+  min-width: 25%;
+  height:fit-content; /*future fit content*/
   box-sizing: border-box;
   background-color: var(--secondary-color);
   border-radius: 10px;
