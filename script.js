@@ -2,6 +2,15 @@ import tabelinha from './relat.js';
 const main = document.querySelector('main');
 const listCard = document.querySelector('#carrinho-list');
 
+const verifyExistence = (arraio,coisa) => {
+  for(let i of arraio){
+    if(i == coisa){
+      return true;
+    }  
+  }
+  return false; 
+}
+
 const createProduct = () => {
   for(let i = 0; i < tabelinha.adressesOfImg.length; i+=1){
 
@@ -27,14 +36,38 @@ const createProduct = () => {
   }
 }
 
+const ActCard = (wc) => {
+  try{
+  const lisOfCard = document.querySelectorAll('#carrinho-list li a')
+  return [...lisOfCard].map(e => {
+    return(e.innerText.replace(/[0-9]/g, ''));});
+  }
+  catch(e){
+    console.log(e);
+    return [...wc];
+  }
+}
+
+const upUnity = (id) => {
+  const span = document.querySelector(`#spanOf${id}`);
+  span.innerHTML = `${parseInt(span.innerHTML)+1}`;  
+  span.innerHTML += ' ';
+}
+
 const addProduct = (e) => {
 
   const listCard = document.querySelector('#carrinho-list');
-  const li = document.createElement("li");
-  li.innerHTML = `<a class="dropdown-item" href="">${tabelinha.names[e.target.id]}</a>`;
-  listCard.appendChild(li);
+  const ID = e.target.id;
+  let produto = tabelinha.names[ID];
 
-  //listCard.innerHTML += `<li><a class="dropdown-item" href="">${tabelinha.names[e.target.id]}</a></li>`;
+  if(verifyExistence(ActCard(produto),produto)){
+    upUnity(e.target.id);
+  }
+  else{
+    const li = document.createElement("li");
+    li.innerHTML = `<a class="dropdown-item" href=""><span id="spanOf${ID}">1</span>${produto}</a>`;
+    listCard.appendChild(li);
+  }
 }
 
 
