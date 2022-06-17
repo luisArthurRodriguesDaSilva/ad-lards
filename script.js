@@ -40,8 +40,10 @@ const ActCard = (wc) => {
   try{
   const lisOfCard = document.querySelectorAll('#carrinho-list li a')
   return [...lisOfCard].map(e => {
-    return(e.innerText.replace(/[0-9]/g, ''));});
-  }
+    let parada = e.innerText.replace(/[0-9]/g,'');
+    return(parada.slice(1,parada.length));
+  })
+}
   catch(e){
     console.log(e);
     return [...wc];
@@ -65,7 +67,7 @@ const addProduct = (e) => {
   }
   else{
     const li = document.createElement("li");
-    li.innerHTML = `<a class="dropdown-item" href=""><span id="spanOf${ID}">1</span>${produto}</a>`;
+    li.innerHTML = `<a class="dropdown-item" href=""><span id="spanOf${ID}">1 </span>${produto}</a>`;
     listCard.appendChild(li);
   }
 }
