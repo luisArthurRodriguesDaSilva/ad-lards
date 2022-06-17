@@ -1,26 +1,10 @@
 body{
   zoom: 1;
-  background: var(--main-linear-gradient);
-  background-size: 400% 400%;
-  background-repeat: no-repeat;
-  animation: gradient 10s ease infinite;
 }
 
 header{
 background-color: rgba(255, 255, 255, 0.904);
 border-bottom: var(--fivth-color) 1px solid;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 10% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .btn-sm{

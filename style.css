@@ -23,8 +23,24 @@ body,section,.limitator,.cima{
 }
 
 body{
-  background-color:var(--main-color);
   overflow-x: hidden;
+  background: var(--main-linear-gradient);
+  background-size: 400% 400%;
+  background-repeat: no-repeat;
+  animation: gradient 10s ease infinite;
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 10% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 header{
@@ -128,7 +144,7 @@ section{
   border-bottom: var(--fivth-color) solid 3px;
 }
 
-.baixo > *,#comprar-carrinho {
+.baixo a,.baixo button ,#comprar-carrinho {
   width: max-content;
   padding: none;
   border: none;
