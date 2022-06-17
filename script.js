@@ -21,13 +21,13 @@ const createProduct = () => {
     `
   <section>
     <div class="cima">
-        <img src="${tabelinha.adressesOfImg[i]}" alt="imagem do produto ${tabelinha.names[i]}">
+        <img src="${tabelinha.adressesOfImg[i]}" alt="imagem do produto ${tabelinha.names[i]}" id="produto-${i}">
     </div>
     <div class="baixo">
         <button class="btn btn-sm add-card" id="${i}">
         carrinho
         </button>
-        <a href="https://wa.me/5522998947260?text=${wpptext}" target="_blank" class="buy-btn btn btn-sm" id="produto-${i}">
+        <a href="https://wa.me/5522998947260?text=${wpptext}" target="_blank" class="buy-btn btn btn-sm" >
            comprar <img id="wpp-logo" src="imagens/b24b5255a15e38ebe07b12094abdca65.png">
         </a>
     </div>
@@ -67,7 +67,7 @@ const addProduct = (e) => {
   }
   else{
     const li = document.createElement("li");
-    li.innerHTML = `<a class="dropdown-item" href=""><span id="spanOf${ID}">1 </span>${produto}</a>`;
+    li.innerHTML = `<a class="dropdown-item" href="#produto-${ID}"><span id="spanOf${ID}">1 </span>${produto}</a>`;
     listCard.appendChild(li);
   }
 }
