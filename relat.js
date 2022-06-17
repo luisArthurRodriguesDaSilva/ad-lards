@@ -22,25 +22,25 @@ const tabelinha = {
 './imagens/natura-logo.svg']
   ,
   'names' : ['LUAR com insta e whatsapp',
-'logo-luar',
-'logo-instagram-png-fundo-transparente4-e6f8487b',
+'logo luar',
+'logo instagram png fundo transparente4 e6f8487b',
 'b24b5255a15e38ebe07b12094abdca65',
-'mary-kay-logo',
+'mary kay logo',
 'LUAR',
-'whatsapp-logo-variant-svgrepo-com',
-'instagram-free-vector-graphic-black-556750',
+'whatsapp logo variant svgrepo com',
+'instagram free vector graphic black 556750',
 'noNameLogo',
 'pinpng',
 'LUAR logo',
-'o-boticario-logo',
+'o boticario logo',
 'LUAR só o nome',
-'images-removebg-preview',
+'images removebg preview',
 'LUAR perfume',
 'noNameLogo2',
 'face_FILL1_wght300_GRAD0_opsz48',
-'eudora-logo-0D15847199-seeklogo',
+'eudora logo 0D15847199 seeklogo',
 'LUAR',
-'natura-logo']
+'natura logo']
 };
 
 export default tabelinha;
