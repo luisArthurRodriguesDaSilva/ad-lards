@@ -67,9 +67,20 @@ const addProduct = (e) => {
   }
   else{
     const li = document.createElement("li");
-    li.innerHTML = `<a class="dropdown-item" href="#produto-${ID}"><span id="spanOf${ID}">1 </span>${produto}</a>`;
+    li.innerHTML = `<a class="dropdown-item prod" href="#produto-${ID}"><span id="spanOf${ID}">1 </span>${produto}</a>`;
     listCard.appendChild(li);
   }
+  changeMessageOfCardBuy();
+}
+
+const changeMessageOfCardBuy = () => {
+  const produtosComprados = document.querySelectorAll('#carrinho-list .prod');
+  let text = 'Quero comprar';
+  for(let i of produtosComprados){
+    text += `  ${i.innerText},`;
+  }
+  let convertedText = text.replaceAll(' ','%20');
+  document.querySelector('#comprar-carrinho').href = `https://wa.me/5522998947260?text=${convertedText.slice(0,convertedText.length - 1)}`
 }
 
 

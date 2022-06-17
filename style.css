@@ -72,6 +72,10 @@ header .btn-container
   background: var(--third-color);
 }
 
+#comprar-carrinho{
+  font-weight: bolder;
+}
+
 
 .material-symbols-outlined {
   line-height: -5;
@@ -124,7 +128,7 @@ section{
   border-bottom: var(--fivth-color) solid 3px;
 }
 
-.baixo > * {
+.baixo > *,#comprar-carrinho {
   width: max-content;
   padding: none;
   border: none;
@@ -138,9 +142,13 @@ section{
   border: 2px solid var(--fivth-color);
 }
 
-.baixo a{
+.baixo a,#comprar-carrinho{
   background-color: rgba(235, 181, 65, 0.986);
   border: solid 2px rgb(102, 81, 14);
+}
+
+#comprar-carrinho{
+  width: 95%;
 }
 
 .baixo #wpp-logo{
