@@ -10,12 +10,19 @@ header{
 }
 
 main{
-  
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 60px;
   width: 95vw;
+}
+
+#carrinho-container{
+  display: block;
+  margin: 2vh;
+  align-self: flex-start;
+  width: fit-content;
+  height: fit-content;
 }
 
 section{
