@@ -1,234 +1,144 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Overlock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+  font-family: 'Comfortaa', cursive;
+  text-decoration: none;
+  margin: 0%;
 }
 
-#body{
-    display: flex;
-    flex-direction: column;
-    font-size: 100%;
-    background: #02f5f5;
-    overflow: auto;
+:root{
+  --main-color : rgb(153, 248, 255);
+  --secondary-color : rgb(255, 255, 255);
+  --third-color : #c3dbf2;
+  --fouth-color : #d7e7f6;
+  --fivth-color : #79b2de;
+  --transparent: rgba(0,0,0,0);
+  --main-linear-gradient : linear-gradient( 102.4deg,  rgba(250,250,250,1) 20%,  rgba(24,250,255,1) 100.3% );
 }
 
-
-.cabeçalho{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:space-around;
-    padding: auto;
-    padding-bottom: 0px;
-
+body,section,.limitator,.cima,.baixo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.cabeçalho-m{
-    display: flex;
-    gap: 10px;
-    margin-top:22px;
+body{
+  background-color:var(--main-color);
+  overflow-x: hidden;
 }
 
-.logos-img{
-    position: static;
-    height: 30px;
-    transition: all 2s;
-    border-radius: 10px;
-    
-}
-.cabeçalho-m1{
-    font-family: 'Courier New', Courier, monospace;
-    color: rgb(0, 0, 0);
-    font-size: 25px;
-}
-.miolo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:space-around;
-    gap: 3vh;
-    padding: 0px;
-    padding-top: 21px;
+header{
+  background-color: var(--secondary-color);
+  height: 15vh;
+  width: 100vw;
 }
 
-.primeira-seção{
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    justify-content:space-around;
-    padding: 0px;
-    padding-top: 0px;
-    gap:300px
-}
-
-.parte_escrita{
-    display: flex;
-    flex-direction:column;
-    gap: 20px;
-}
-.endereço{
-    color: inherit;
-    font-size: 25px;
-}
-.credito{
-    color: inherit;
-    font-size: 15px;
-}
-.parte_da_direita{
-    font-family: 'Comfortaa', cursive;
-    font-size: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
-.cartoes{
-    max-width: 15vw;
-}
-
-.segunda-seção{
-     display: flex;
-     flex-direction: column;
-     gap: 20px;
-     align-items: center;
-     justify-content:space-around;
-}
-.titulo_segunda_seção:hover{
-    max-width: 500px;
-    transition: all 2s;
-}
-.titulo_segunda_seção{
-    
-    border-top: 1px solid rgb(0, 0, 0);
-    
-    padding-top: 0px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 27px;
-    font-weight: 800;
-}
-.p_segunda_seção{
-    font-size: 20px;
-    font-weight: 500;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-.marcas{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:space-around;
-    gap: 80px;
-
-}
-.foto_de_marca{
-    max-height: 100px;
-    max-width: 100px;
-    transition: 0.3s all;
-    margin-bottom: 10px;
-
-}
-.foto_de_marca:hover{
-    margin: 0px;
-    max-height: 105px;
-    max-width: 105px;
-    border-bottom: #d833af;
-}   
-
-.rodapé{
-    position: relative;
-    border-top: 1px solid rgb(161, 209, 228);
-    background:rgba(119, 146, 182, 0.445);
-    height: auto;
-}
-
-@media (orientation:portrait) 
+#header-container
 {
-
-#body
-{
-    background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%,rgba(0,206,255,0.2) 50% ,rgba(0,255,252,0.3715861344537815) 100%);
-}
-.miolo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.foto_luar{
-    max-width: 79vw;
-    max-height: 79vh;
-}
-
-.primeira-seção{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    margin-inline-end: 10%;
-    margin-inline-start: 10%;
-}
-.parte_da_direita{
-    max-width:100%;
-    text-align: center;
-    font-size: 7vw;
-    gap: 10vh;
-    padding-bottom: 10vh;
-}
-.cartoes{
-    max-width: 50vw;
-    max-height: 50vw;
-}
-.endereço{
-    border-radius: 1vw rgb(255, 0, 0);
-    color: inherit;
-    font-size: 5vw;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
 }
 
 
-.marcas{
-    display: flex;
-    flex-direction: column;
-    gap: 0vh;
-}
-.foto_de_marca{
-    max-width: 50vw;
-    max-height: 50vw;
-    padding: 0vh;
-}
-.remendo{
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    width: 50vw;
-    height: 50vw;
-}
-.foto_de_marca:hover{
-    max-width: 5vw;
-    max-height: 5vw;
-    padding: 0vh;
-}   
-.rodapé{
-    display:flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    justify-content:space-around;
-}
-.cabeçalho-m1{
-    display: flex;
-    gap: 10px;
-    font-size: 8vw;
+#header-container > img{
+  height: 95%;
 }
 
-.logos-img{
-    position: static;
-    height: 8vw;
-    transition: all 2s;
-    border-radius: 10px;
-    
+.mine-btn{
+  background-color: var(--main-color);
 }
-.credito{
-    color: inherit;
-    font-size: 3.5vw;
+
+.btn-group ul {
+  background-color: rgb(139, 238, 255);
 }
-    
+
+.material-symbols-outlined {
+  line-height: -5;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+
+main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 2vh;
+  background-color: var(--third-color);
+  height: fit-content; /*future fit content*/
+  width: 95vw;
+  border: var(--fivth-color) solid 2px;
+  border-radius: 10px;
+}
+
+section{
+  margin: 5vh 1vh 1vh 1vh;
+  min-width: 25%;
+  height:fit-content; /*future fit content*/
+  box-sizing: border-box;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  border: var(--fivth-color) solid ;
+  border-bottom: none;
+  margin: 1vh;
+}
+
+
+.cima,.baixo{
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.cima{
+  flex: 1 1;
+  width: 100%;
+}
+
+.baixo{
+  height: 40px;
+  background-color: var(--fouth-color);
+  width: 100%;
+  border-radius: 0px 0px 8.5px 8.5px;
+  border-bottom: var(--fivth-color) solid 3px;
+}
+
+.baixo a{
+  width: max-content;
+  margin:100%;
+  padding: none;
+  border: none;
+  max-height: 85%;
+  font-weight: 900;
+  background-color: rgba(235, 181, 65, 0.986);
+  border: solid 2px rgb(102, 81, 14);
+}
+
+.baixo #wpp-logo{
+  margin-bottom: 3px;
+}
+
+#insta-logo{
+  display: inline;
+  max-height: 15px;
+  margin-left: 4px;
+}
+
+#wpp-logo{
+  display: inline;
+  max-width: 15px;
+  max-height: 15px;
+  margin-left: 4px;
+  align-self: flex-start;
+}
+
+.baixo a:hover{
+  background-color: rgba(238, 190, 85, 0.986);
+  box-shadow: 0px 1px 2px hsla(41, 67%, 39%, 0.637);
 }

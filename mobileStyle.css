@@ -1,0 +1,55 @@
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+header{
+  height: 55px;
+  position: fixed;
+  border-radius: 0px 0px 5px 5px;
+}
+
+main{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  width: 95vw;
+}
+
+section{
+  margin: 1.5vh 1vw 2vh 1vw;
+  width: 95%;
+  height:fit-content; /*future fit content*/
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  border: var(--fivth-color) solid ;
+  border-bottom: none;
+}
+
+.cima img{
+  max-width: 35vw;
+  max-height: 38vh;
+}
+
+@media (min-width:700px){
+
+  
+
+  .baixo{
+    height: 10vw;
+  }
+
+  .baixo a {
+    font-size: 4vw;
+  }
+  .baixo #wpp-logo {
+    min-width: 5vw;
+    min-height: 5vw;
+  }
+}
+
+
+
+

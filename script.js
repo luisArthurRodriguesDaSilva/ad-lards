@@ -1,24 +1,27 @@
-const bode = document.querySelector("#body");
-bode.addEventListener('mousemove', e => {
-        if(window.innerHeight<window.innerWidth)
-        {
-        var x = e.clientX;
-        var y = e.clientY;
-        console.log(x + " e " + y );
-        var distancia =  Math.sqrt(Math.pow(y-(screen.height/2),2) + Math.pow(x-(screen.width/2),2))
-        const distancia_maxima = Math.sqrt(Math.pow(screen.height,2)+Math.pow(screen.width,2))
-        gradient="linear-gradient(" + ((((Math.atan2(y-(screen.height/2),x-(screen.width/2))))*360/6.28)+270)+ "deg, rgba(255,255,255,0.1) 0%,rgba(0,206,255,0.2) 50% ,rgba(0,255,252,0.7715861344537815) 100%)";
-        bode.style.backgroundImage= gradient;
-        bode.style.MozBackground = gradient;
-        bode.style.WebkitBackground = gradient;
-        bode.style.background = gradient;
-        }
-        else
-        {
-                gradient="linear-gradient(180deg, rgba(255,255,255,0.1) 0%,rgba(0,206,255,0.2) 50% ,rgba(0,255,252,0.7715861344537815) 100%)";
-                bode.style.backgroundImage= gradient;
-                bode.style.MozBackground = gradient;
-                bode.style.WebkitBackground = gradient;
-                bode.style.background = gradient;
-        }
-});
+import tabelinha from './relat.js';
+const main = document.querySelector('main');
+
+const createProduct = () => {
+  for(let i = 0; i < tabelinha.adressesOfImg.length; i+=1){
+
+    let text = `olá, desejo comprar o produto ${tabelinha.names[i]}`;
+    let wpptext = text.replaceAll(' ','%20');
+
+    main.innerHTML += 
+    `
+    <section>
+    <div class="cima">
+        <img src="${tabelinha.adressesOfImg[i]}" alt="imagem do produto ${tabelinha.names[i]}">
+    </div>
+    <div class="baixo">
+        <a href="https://wa.me/5522998947260?text=${wpptext}" target="_blank" class="buy-btn btn btn-sm" id="produto-${i}">
+           comprar <img id="wpp-logo" src="imagens/b24b5255a15e38ebe07b12094abdca65.png">
+        </a>
+    </div>
+</section>
+`;
+  }
+}
+createProduct();
+
+document.querySelectorAll('.buy-btn');
