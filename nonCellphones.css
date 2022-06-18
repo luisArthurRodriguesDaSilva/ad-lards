@@ -24,6 +24,18 @@ border-bottom: var(--fivth-color) 1px solid;
 }
 
 @media (max-width:700px){
+
+  
+header{
+  height: 55px;
+  position: fixed;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.btn-group button{
+  height: 45px;
+}
+
   .baixo a{
     font-size:15px;
   }
