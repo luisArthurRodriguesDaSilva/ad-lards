@@ -43,6 +43,7 @@ section{
 }
 
 .cima img{
+  margin:10px;
   max-width: 35vw;
   max-height: 38vh;
 }

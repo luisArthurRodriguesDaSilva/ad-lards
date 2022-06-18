@@ -131,7 +131,7 @@ section{
 .cima{
   align-items: center;
   align-content: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex: 1 1;
   width: 100%;
 }
