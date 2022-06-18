@@ -9,6 +9,20 @@ header{
   border-radius: 0px 0px 5px 5px;
 }
 
+.btn-group button{
+  height: 45px;
+}
+
+
+.material-symbols-outlined {
+  line-height: -5;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 100,
+  'GRAD' 200,
+  'opsz' 20
+}
+
 main{
   display: flex;
   flex-direction: column;
@@ -17,13 +31,6 @@ main{
   width: 95vw;
 }
 
-#carrinho-container{
-  display: block;
-  margin: 2vh;
-  align-self: flex-start;
-  width: fit-content;
-  height: fit-content;
-}
 
 section{
   margin: 1.5vh 1vw 2vh 1vw;
