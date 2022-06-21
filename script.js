@@ -43,8 +43,14 @@ const ActCard = (wc) => {
   try{
   const lisOfCard = document.querySelectorAll('#carrinho-list li a')
   return [...lisOfCard].map(e => {
-    let parada = (e.innerText.replace(/[0-9]/g,'').slice(0,2) + e.innerText.slice(3,e.innerText.length));
-    return(parada.slice(1,parada.length));
+    let w = e.innerText;
+    let firstPart = w.slice(0,5);
+    let lastPart = w.slice(5,w.length);
+    firstPart = firstPart.replace(/[0-9]/g,'');
+    let juntada = firstPart + lastPart;
+    // let parada = (e.innerText.replace(/[0-9]/g,'').slice(0,5) + e.innerText.slice(6,e.innerText.length));
+    console.log(juntada)
+    return(juntada.slice(1,juntada.length));
   })
 }
   catch(e){
@@ -55,9 +61,7 @@ const ActCard = (wc) => {
 
 const changeUnity = (id,v) => {
   const span = document.querySelector(`#spanOf${id}`);
-  const dive = document.querySelector(`#unitys-of-${id}`); 
   span.innerHTML = `${parseInt(span.innerHTML)+v}`;  
-  dive.innerHTML = span.innerHTML;
   span.innerHTML += ' ';
 }
 
@@ -67,6 +71,9 @@ const addProduct = (e) => {
   const ID = e.target.id;
   let produto = tabelinha.names[ID];
 
+  
+  const dive = document.querySelector(`#unitys-of-${ID}`); 
+  dive.innerHTML = `${parseInt(dive.innerHTML)+1}`;
   if(verifyExistence(ActCard(produto),produto)){
     changeUnity(e.target.id,1);
   }
@@ -92,6 +99,8 @@ const rmProduct = (e) => {
       span.parentNode.remove();
     }
     changeMessageOfCardBuy();
+    const dive = document.querySelector(`#unitys-of-${ID}`); 
+    dive.innerHTML = `${parseInt(dive.innerHTML)-1}`;
   }catch(e){console.log('ja deu cr  ' + e)}
 
 }
