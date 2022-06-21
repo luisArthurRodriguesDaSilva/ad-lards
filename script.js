@@ -24,12 +24,15 @@ const createProduct = () => {
         <img src="${tabelinha.adressesOfImg[i]}" alt="imagem do produto ${tabelinha.names[i]}" id="produto-${i}">
     </div>
     <div class="baixo">
+      <div>
         <button class="btn btn-sm add-card" id="${i}">
-        carrinho
+        +
         </button>
-        <a href="https://wa.me/5522998947260?text=${wpptext}" target="_blank" class="buy-btn btn btn-sm" >
-           comprar <img id="wpp-logo" src="imagens/b24b5255a15e38ebe07b12094abdca65.png">
-        </a>
+        <div class="unitis" id="unitys-of-${i}" >0</div>
+        <button class="btn btn-sm rm-card" id="${i}">
+        -
+        </button>
+      </div>
     </div>
   </section>
 `;
@@ -50,9 +53,11 @@ const ActCard = (wc) => {
   }
 }
 
-const upUnity = (id) => {
+const changeUnity = (id,v) => {
   const span = document.querySelector(`#spanOf${id}`);
-  span.innerHTML = `${parseInt(span.innerHTML)+1}`;  
+  const dive = document.querySelector(`#unitys-of-${id}`); 
+  span.innerHTML = `${parseInt(span.innerHTML)+v}`;  
+  dive.innerHTML = span.innerHTML;
   span.innerHTML += ' ';
 }
 
@@ -63,7 +68,7 @@ const addProduct = (e) => {
   let produto = tabelinha.names[ID];
 
   if(verifyExistence(ActCard(produto),produto)){
-    upUnity(e.target.id);
+    changeUnity(e.target.id,1);
   }
   else{
     const li = document.createElement("li");
@@ -73,9 +78,27 @@ const addProduct = (e) => {
   changeMessageOfCardBuy();
 }
 
+const rmProduct = (e) => {
+
+  const listCard = document.querySelector('#carrinho-list');
+  const ID = e.target.id;
+  const span = document.querySelector(`#spanOf${ID}`);
+  let produto = tabelinha.names[ID];
+  try{
+    if(parseInt(span.innerHTML) > 1){
+    changeUnity(e.target.id,-1);
+    }
+    else{
+      span.parentNode.remove();
+    }
+    changeMessageOfCardBuy();
+  }catch(e){console.log('ja deu cr  ' + e)}
+
+}
+
 const changeMessageOfCardBuy = () => {
   const produtosComprados = document.querySelectorAll('#carrinho-list .prod');
-  let text = 'Quero comprar';
+  let text = 'Quero comprar ';
   for(let i of produtosComprados){
     text += `  ${i.innerText},`;
   }
@@ -86,3 +109,4 @@ const changeMessageOfCardBuy = () => {
 
 createProduct();
 for (let i of document.querySelectorAll('.add-card')){i.addEventListener('click', addProduct);}
+for (let i of document.querySelectorAll('.rm-card')){i.addEventListener('click', rmProduct);}

@@ -144,6 +144,17 @@ section{
   border-bottom: var(--fivth-color) solid 3px;
 }
 
+.baixo > div {
+  display: flex;
+}
+
+.unitis{
+  display: inline;
+  width: 35px;
+  height: 35px;
+  background-color: aliceblue;
+}
+
 .baixo a,.baixo button ,#comprar-carrinho {
   width: max-content;
   padding: none;
