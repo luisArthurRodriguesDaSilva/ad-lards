@@ -40,7 +40,7 @@ const ActCard = (wc) => {
   try{
   const lisOfCard = document.querySelectorAll('#carrinho-list li a')
   return [...lisOfCard].map(e => {
-    let parada = e.innerText.replace(/[0-9]/g,'');
+    let parada = (e.innerText.replace(/[0-9]/g,'').slice(0,2) + e.innerText.slice(3,e.innerText.length));
     return(parada.slice(1,parada.length));
   })
 }
