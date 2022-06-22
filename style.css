@@ -145,23 +145,32 @@ section{
 }
 
 .baixo > div {
+  background: var(--secondary-color);
+  max-height: 36px;
   display: flex;
+  gap: 1vw;
+  border: var(--fivth-color) solid 2px;
+  border-radius: 8.5px;
 }
 
-.unitis{
-  display: inline;
+.unitis,.baixo button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 590;
+  margin: none;
+  height: 32px;
   width: 35px;
-  height: 35px;
   background-color: aliceblue;
 }
 
-.baixo a,.baixo button ,#comprar-carrinho {
-  width: max-content;
-  padding: none;
-  border: none;
-  max-height: 85%;
-  font-weight: 900;
-  border-radius: 8.5px; 
+.add-card{
+  border-radius: 6px 0px 0px 6px;
+}
+
+.rm-card{
+  border-radius: 0px 6px 6px 0px;
 }
 
 .baixo button{
