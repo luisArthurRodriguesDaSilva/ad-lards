@@ -50,18 +50,25 @@ section{
 
 @media (min-width:700px){
 
-  
+  header{
+    height: 10vh;
+  }
+
+  main{
+    margin-top: 11vh;
+  }
 
   .baixo{
     height: 10vw;
   }
-
-  .baixo a {
-    font-size: 4vw;
+  
+  .baixo > div{
+    max-height: 10vw;
+    height: 9vw;
   }
-  .baixo #wpp-logo {
-    min-width: 5vw;
-    min-height: 5vw;
+
+  .baixo > div > *{
+    font-size: 5vh;
   }
 }
 

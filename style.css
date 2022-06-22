@@ -79,6 +79,11 @@ header .btn-container
   height: 7vh;
 }
 
+
+#car-img{
+  height: 100%;
+}
+
 .btn-group ul {
   background-color: rgb(139, 238, 255);
 }
