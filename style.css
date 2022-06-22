@@ -147,21 +147,22 @@ section{
 .baixo > div {
   background: var(--secondary-color);
   max-height: 36px;
+  min-width: 30%;
+  flex: 1 1;
+  max-width: 60%;
   display: flex;
-  gap: 1vw;
   border: var(--fivth-color) solid 2px;
   border-radius: 8.5px;
 }
 
 .unitis,.baixo button{
   display: flex;
+  flex: 1 0 20px;
   justify-content: center;
   align-items: center;
   font-family: 'Comfortaa', cursive;
   font-weight: 590;
   margin: none;
-  height: 32px;
-  width: 35px;
   background-color: aliceblue;
 }
 
@@ -219,4 +220,11 @@ section{
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+
+.rm-card:disabled,
+.rm-card[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
