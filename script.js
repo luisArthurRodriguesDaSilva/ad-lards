@@ -13,10 +13,6 @@ const verifyExistence = (arraio,coisa) => {
 
 const createProduct = () => {
   for(let i = 0; i < tabelinha.adressesOfImg.length; i+=1){
-
-    let text = `olá, desejo comprar o produto ${tabelinha.names[i]}`;
-    let wpptext = text.replaceAll(' ','%20');
-
     main.innerHTML += 
     `
   <section>
@@ -40,7 +36,7 @@ const createProduct = () => {
   }
 }
 
-const ActCard = (wc) => {
+const prodsOfActCard = (wc) => {
   try{
   const lisOfCard = document.querySelectorAll('#carrinho-list li a')
   return [...lisOfCard].map(e => {
@@ -49,7 +45,6 @@ const ActCard = (wc) => {
     let lastPart = w.slice(5,w.length);
     firstPart = firstPart.replace(/[0-9]/g,'');
     let juntada = firstPart + lastPart;
-    // let parada = (e.innerText.replace(/[0-9]/g,'').slice(0,5) + e.innerText.slice(6,e.innerText.length));
     console.log(juntada)
     return(juntada.slice(1,juntada.length));
   })
@@ -75,7 +70,7 @@ const addProduct = (e) => {
   
   const dive = document.querySelector(`#unitys-of-${ID}`); 
   dive.innerHTML = `${parseInt(dive.innerHTML)+1}`;
-  if(verifyExistence(ActCard(produto),produto)){
+  if(verifyExistence(prodsOfActCard(produto),produto)){
     changeUnity(e.target.id,1);
   }
   else{
