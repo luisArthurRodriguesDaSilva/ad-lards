@@ -22,6 +22,7 @@ const createProduct = () => {
   <section>
     <div class="cima">
         <img src="${tabelinha.adressesOfImg[i]}" alt="imagem do produto ${tabelinha.names[i]}" id="produto-${i}">
+        <p id="price-of${i}">${tabelinha.prices[i]}</p>
     </div>
     <div class="baixo">
       <div>
