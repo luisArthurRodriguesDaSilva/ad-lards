@@ -98,16 +98,6 @@ header .btn-container
 }
 
 
-.material-symbols-outlined {
-  line-height: -5;
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 200,
-  'opsz' 48
-}
-
-
 main{
   display: flex;
   flex-wrap: wrap;
