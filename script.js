@@ -128,11 +128,11 @@ createProduct();
 
 document.querySelectorAll('.add-card').forEach(e =>{
   //e.addEventListener('click', addProduct);
-  e.addEventListener('click', changeAccPrice);
   e.addEventListener('click', addRmProduct);
+  e.addEventListener('click', changeAccPrice);
 })
 document.querySelectorAll('.rm-card').forEach(e =>{
   //e.addEventListener('click', rmProduct);
-  e.addEventListener('click', changeAccPrice);
   e.addEventListener('click', addRmProduct);
+  e.addEventListener('click', changeAccPrice);
 })
