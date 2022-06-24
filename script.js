@@ -1,6 +1,5 @@
 import tabelinha from './relat.js';
 const main = document.querySelector('main');
-const listCard = document.querySelector('#carrinho-list');
 
 const createProduct = () => {
   for(let i = 0; i < tabelinha.adressesOfImg.length; i+=1){
@@ -27,8 +26,7 @@ const createProduct = () => {
 `;
   }
 }
-
-const prodsOfActCard = (wc) => {
+const productsOfActCard = (wc) => {
   try{
   const lisOfCard = document.querySelectorAll('#carrinho-list li a')
   return [...lisOfCard].map(e => {
@@ -70,7 +68,7 @@ const addProduct = (ID,produto,listCard,dive,span) => {
 
   dive.innerHTML = `${parseInt(dive.innerHTML)+1}`;
 
-  if(prodsOfActCard(produto).some(el => el == produto)){
+  if(productsOfActCard(produto).some(el => el == produto)){
     changeUnity(ID,1);
   }
   else{
