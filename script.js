@@ -13,35 +13,41 @@ const verifyExistence = (arraio,coisa) => {
 
 const createProduct = () => {
   for(let i = 0; i < tabelinha.adressesOfImg.length; i+=1){
-
-    let text = `olá, desejo comprar o produto ${tabelinha.names[i]}`;
-    let wpptext = text.replaceAll(' ','%20');
-
     main.innerHTML += 
     `
   <section>
     <div class="cima">
         <img src="${tabelinha.adressesOfImg[i]}" alt="imagem do produto ${tabelinha.names[i]}" id="produto-${i}">
+        <p id="price-of${i}">R$${tabelinha.prices[i].replace('.',',')}</p>
+        <div class="accum-price" id="ac-price-of-${i}">R$0,00</div>
     </div>
     <div class="baixo">
-        <button class="btn btn-sm add-card" id="${i}">
-        carrinho
+      <div class="masomeno">
+        <button class="btn btn-sm rm-card" id="${i}">
+        -
         </button>
-        <a href="https://wa.me/5522998947260?text=${wpptext}" target="_blank" class="buy-btn btn btn-sm" >
-           comprar <img id="wpp-logo" src="imagens/b24b5255a15e38ebe07b12094abdca65.png">
-        </a>
+        <div class="unitis" id="unitys-of-${i}" >0</div>
+        <button class="btn btn-sm add-card" id="${i}">
+        +
+        </button>
+      </div>
     </div>
   </section>
 `;
   }
 }
 
-const ActCard = (wc) => {
+const prodsOfActCard = (wc) => {
   try{
   const lisOfCard = document.querySelectorAll('#carrinho-list li a')
   return [...lisOfCard].map(e => {
-    let parada = (e.innerText.replace(/[0-9]/g,'').slice(0,2) + e.innerText.slice(3,e.innerText.length));
-    return(parada.slice(1,parada.length));
+    let w = e.innerText;
+    let firstPart = w.slice(0,w.indexOf(' '));
+    let lastPart = w.slice(w.indexOf(' '),w.length);
+    firstPart = firstPart.replace(/[0-9]/g,'');
+    let juntada = firstPart + lastPart;
+    console.log(juntada)
+    return(juntada.slice(1,juntada.length));
   })
 }
   catch(e){
@@ -50,9 +56,9 @@ const ActCard = (wc) => {
   }
 }
 
-const upUnity = (id) => {
+const changeUnity = (id,v) => {
   const span = document.querySelector(`#spanOf${id}`);
-  span.innerHTML = `${parseInt(span.innerHTML)+1}`;  
+  span.innerHTML = `${parseInt(span.innerHTML)+v}`;  
   span.innerHTML += ' ';
 }
 
@@ -62,8 +68,11 @@ const addProduct = (e) => {
   const ID = e.target.id;
   let produto = tabelinha.names[ID];
 
-  if(verifyExistence(ActCard(produto),produto)){
-    upUnity(e.target.id);
+  
+  const dive = document.querySelector(`#unitys-of-${ID}`); 
+  dive.innerHTML = `${parseInt(dive.innerHTML)+1}`;
+  if(verifyExistence(prodsOfActCard(produto),produto)){
+    changeUnity(e.target.id,1);
   }
   else{
     const li = document.createElement("li");
@@ -73,9 +82,29 @@ const addProduct = (e) => {
   changeMessageOfCardBuy();
 }
 
+const rmProduct = (e) => {
+
+  const listCard = document.querySelector('#carrinho-list');
+  const ID = e.target.id;
+  const span = document.querySelector(`#spanOf${ID}`);
+  let produto = tabelinha.names[ID];
+  try{
+    if(parseInt(span.innerHTML) > 1){
+    changeUnity(e.target.id,-1);
+    }
+    else{
+      span.parentNode.remove();
+    }
+    changeMessageOfCardBuy();
+    const dive = document.querySelector(`#unitys-of-${ID}`); 
+    dive.innerHTML = `${parseInt(dive.innerHTML)-1}`;
+  }catch(e){console.log('ja deu cr  ' + e)}
+
+}
+
 const changeMessageOfCardBuy = () => {
   const produtosComprados = document.querySelectorAll('#carrinho-list .prod');
-  let text = 'Quero comprar';
+  let text = 'Quero comprar ';
   for(let i of produtosComprados){
     text += `  ${i.innerText},`;
   }
@@ -83,6 +112,16 @@ const changeMessageOfCardBuy = () => {
   document.querySelector('#comprar-carrinho').href = `https://wa.me/5522998947260?text=${convertedText.slice(0,convertedText.length - 1)}`
 }
 
+const changeAccPrice = (e) => {
+  const ID = e.target.id;
+  const qnt = parseInt(document.querySelector(`#unitys-of-${ID}`).innerHTML);
+  const price = tabelinha.prices[ID];
+  const acc = document.querySelector(`#ac-price-of-${ID}`);
+  acc.innerHTML = `R$${(qnt* parseFloat(price)).toFixed(2)}`.replace('.',',');
+}
+
 
 createProduct();
 for (let i of document.querySelectorAll('.add-card')){i.addEventListener('click', addProduct);}
+for (let i of document.querySelectorAll('.rm-card')){i.addEventListener('click', rmProduct);}
+[...document.querySelectorAll( '.rm-card'),...document.querySelectorAll('.add-card')].forEach((e) => e.addEventListener('click', changeAccPrice));

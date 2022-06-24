@@ -79,6 +79,11 @@ header .btn-container
   height: 7vh;
 }
 
+
+#car-img{
+  height: 100%;
+}
+
 .btn-group ul {
   background-color: rgb(139, 238, 255);
 }
@@ -90,16 +95,6 @@ header .btn-container
 
 #comprar-carrinho{
   font-weight: bolder;
-}
-
-
-.material-symbols-outlined {
-  line-height: -5;
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 200,
-  'opsz' 48
 }
 
 
@@ -137,20 +132,51 @@ section{
 }
 
 .baixo{
-  height: 40px;
+  height: 50px;
   background-color: var(--fouth-color);
   width: 100%;
   border-radius: 0px 0px 8.5px 8.5px;
   border-bottom: var(--fivth-color) solid 3px;
 }
 
-.baixo a,.baixo button ,#comprar-carrinho {
-  width: max-content;
-  padding: none;
-  border: none;
-  max-height: 85%;
-  font-weight: 900;
-  border-radius: 8.5px; 
+.accum-price{
+  width: 100px;
+  height: 30px;
+  border-radius:20px 20px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: azure;
+}
+
+.baixo .masomeno {
+  background: var(--secondary-color);
+  max-height: 36px;
+  min-width: 30%;
+  flex: 1 1;
+  max-width: 60%;
+  display: flex;
+  border: var(--fivth-color) solid 2px;
+  border-radius: 8.5px;
+}
+
+.unitis,.baixo button{
+  display: flex;
+  flex: 1 0 20px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 590;
+  margin: none;
+  background-color: aliceblue;
+}
+
+.add-card{
+  border-radius: 0px 6px 6px 0px;
+}
+
+.rm-card{
+  border-radius: 6px 0px 0px 6px;
 }
 
 .baixo button{
@@ -164,7 +190,7 @@ section{
 }
 
 #comprar-carrinho{
-  width: 95%;
+  width: 100%;
 }
 
 .baixo #wpp-logo{
@@ -199,4 +225,11 @@ section{
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+
+.rm-card:disabled,
+.rm-card[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
