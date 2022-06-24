@@ -122,6 +122,13 @@ const changeAccPrice = (e) => {
 
 
 createProduct();
-for (let i of document.querySelectorAll('.add-card')){i.addEventListener('click', addProduct);}
-for (let i of document.querySelectorAll('.rm-card')){i.addEventListener('click', rmProduct);}
-[...document.querySelectorAll( '.rm-card'),...document.querySelectorAll('.add-card')].forEach((e) => e.addEventListener('click', changeAccPrice));
+
+
+document.querySelectorAll('.add-card').forEach(e =>{
+  e.addEventListener('click', addProduct);
+  e.addEventListener('click', changeAccPrice);
+})
+document.querySelectorAll('.rm-card').forEach(e =>{
+  e.addEventListener('click', rmProduct);
+  e.addEventListener('click', changeAccPrice);
+})
