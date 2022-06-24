@@ -69,21 +69,16 @@ const addRmProduct = (e) => {
   const dive = document.querySelector(`#unitys-of-${ID}`);
   const span = document.querySelector(`#spanOf${ID}`);
 
-  if(lasClasses.some(elem => elem == 'add-card')) console.log('tem add')
-  else if(lasClasses.some(elem => elem == 'rm-card'))console.log('tem rm')
+  if(lasClasses.some(elem => elem == 'add-card'))addProduct(ID,produto,listCard,dive,span)
+  else if(lasClasses.some(elem => elem == 'rm-card'))rmProduct(ID,produto,listCard,dive,span)
 }
 
-const addProduct = (e) => {
+const addProduct = (ID,produto,listCard,dive,span) => {
 
-  const listCard = document.querySelector('#carrinho-list');
-  const ID = e.target.id;
-  let produto = tabelinha.names[ID];
-
-  
-  const dive = document.querySelector(`#unitys-of-${ID}`); 
   dive.innerHTML = `${parseInt(dive.innerHTML)+1}`;
+
   if(verifyExistence(prodsOfActCard(produto),produto)){
-    changeUnity(e.target.id,1);
+    changeUnity(ID,1);
   }
   else{
     const li = document.createElement("li");
@@ -93,15 +88,11 @@ const addProduct = (e) => {
   changeMessageOfCardBuy();
 }
 
-const rmProduct = (e) => {
+const rmProduct = (ID,produto,listCard,dive,span) => {
 
-  const listCard = document.querySelector('#carrinho-list');
-  const ID = e.target.id;
-  const span = document.querySelector(`#spanOf${ID}`);
-  let produto = tabelinha.names[ID];
   try{
     if(parseInt(span.innerHTML) > 1){
-    changeUnity(e.target.id,-1);
+    changeUnity(ID,-1);
     }
     else{
       span.parentNode.remove();
@@ -136,12 +127,12 @@ createProduct();
 
 
 document.querySelectorAll('.add-card').forEach(e =>{
-  e.addEventListener('click', addProduct);
+  //e.addEventListener('click', addProduct);
   e.addEventListener('click', changeAccPrice);
   e.addEventListener('click', addRmProduct);
 })
 document.querySelectorAll('.rm-card').forEach(e =>{
-  e.addEventListener('click', rmProduct);
+  //e.addEventListener('click', rmProduct);
   e.addEventListener('click', changeAccPrice);
   e.addEventListener('click', addRmProduct);
 })
