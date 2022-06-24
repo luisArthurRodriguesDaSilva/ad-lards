@@ -13,16 +13,6 @@ header{
   height: 45px;
 }
 
-
-.material-symbols-outlined {
-  line-height: -5;
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 100,
-  'GRAD' 200,
-  'opsz' 20
-}
-
 main{
   display: flex;
   flex-direction: column;
@@ -59,16 +49,17 @@ section{
   }
 
   .baixo{
-    height: 10vw;
+    height: 10vh;
   }
-  
-  .baixo > div{
-    max-height: 10vw;
-    height: 9vw;
+
+  .baixo .masomeno{
+    max-height: 9vh;
+    min-width: 30%;
+    max-width: 60%;
   }
 
   .baixo > div > *{
-    font-size: 5vh;
+    font-size: 4vh;
   }
 }
 

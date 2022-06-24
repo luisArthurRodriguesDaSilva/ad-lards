@@ -8,10 +8,10 @@ background-color: rgba(255, 255, 255, 0.904);
 border-bottom: var(--fivth-color) 1px solid;
 }
 
-
+/* 
 .btn-group button{
   height: 45px;
-}
+} */
 
 
 .btn-sm{
@@ -26,33 +26,4 @@ border-bottom: var(--fivth-color) 1px solid;
 .baixo a{
   max-width: 90%;
   max-height: 95%;
-}
-
-@media (max-width:700px){
-
-header{
-  height: 55px;
-  position: fixed;
-  border-radius: 0px 0px 5px 5px;
-}
-
-.btn-group button{
-  height: 45px;
-}
-
-  .baixo a{
-    font-size:15px;
-  }
-
-  .cima img{  
-    min-height: 0%;
-    max-width: 80vw;
-  }
-  
-  @media (max-height:537px) {
-    #wpp-logo{
-      display:none;
-    }
-  }
-
 }
