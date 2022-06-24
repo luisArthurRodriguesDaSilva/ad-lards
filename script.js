@@ -2,15 +2,6 @@ import tabelinha from './relat.js';
 const main = document.querySelector('main');
 const listCard = document.querySelector('#carrinho-list');
 
-const verifyExistence = (arraio,coisa) => {
-  for(let i of arraio){
-    if(i == coisa){
-      return true;
-    }  
-  }
-  return false; 
-}
-
 const createProduct = () => {
   for(let i = 0; i < tabelinha.adressesOfImg.length; i+=1){
     main.innerHTML += 
@@ -68,16 +59,17 @@ const addRmProduct = (e) => {
   const produto = tabelinha.names[ID];
   const dive = document.querySelector(`#unitys-of-${ID}`);
   const span = document.querySelector(`#spanOf${ID}`);
-
-  if(lasClasses.some(elem => elem == 'add-card'))addProduct(ID,produto,listCard,dive,span)
-  else if(lasClasses.some(elem => elem == 'rm-card'))rmProduct(ID,produto,listCard,dive,span)
+  const params = [ID,produto,listCard,dive,span];
+  
+  lasClasses.some(el => el == 'add-card') ? addProduct(...params) : rmProduct(...params);
+  changeMessageOfCardBuy()
 }
 
 const addProduct = (ID,produto,listCard,dive,span) => {
 
   dive.innerHTML = `${parseInt(dive.innerHTML)+1}`;
 
-  if(verifyExistence(prodsOfActCard(produto),produto)){
+  if(prodsOfActCard(produto).some(el => el == produto)){
     changeUnity(ID,1);
   }
   else{
@@ -85,7 +77,6 @@ const addProduct = (ID,produto,listCard,dive,span) => {
     li.innerHTML = `<a class="dropdown-item prod" href="#produto-${ID}"><span id="spanOf${ID}">1 </span>${produto}</a>`;
     listCard.appendChild(li);
   }
-  changeMessageOfCardBuy();
 }
 
 const rmProduct = (ID,produto,listCard,dive,span) => {
@@ -97,10 +88,8 @@ const rmProduct = (ID,produto,listCard,dive,span) => {
     else{
       span.parentNode.remove();
     }
-    changeMessageOfCardBuy();
-    const dive = document.querySelector(`#unitys-of-${ID}`); 
     dive.innerHTML = `${parseInt(dive.innerHTML)-1}`;
-  }catch(e){console.log('ja deu cr  ' + e)}
+  } catch(e){console.log('ja deu cr  ' + e)}
 
 }
 
@@ -125,12 +114,12 @@ const changeAccPrice = (e) => {
 
 createProduct();
 
-
 document.querySelectorAll('.add-card').forEach(e =>{
   //e.addEventListener('click', addProduct);
   e.addEventListener('click', addRmProduct);
   e.addEventListener('click', changeAccPrice);
 })
+
 document.querySelectorAll('.rm-card').forEach(e =>{
   //e.addEventListener('click', rmProduct);
   e.addEventListener('click', addRmProduct);
