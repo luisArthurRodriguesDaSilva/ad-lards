@@ -18,16 +18,17 @@ const createProduct = () => {
   <section>
     <div class="cima">
         <img src="${tabelinha.adressesOfImg[i]}" alt="imagem do produto ${tabelinha.names[i]}" id="produto-${i}">
-        <p id="price-of${i}">${tabelinha.prices[i]}</p>
+        <p id="price-of${i}">R$${tabelinha.prices[i].replace('.',',')}</p>
+        <div class="accum-price" id="ac-price-of-${i}">R$0,00</div>
     </div>
     <div class="baixo">
-      <div>
-        <button class="btn btn-sm add-card" id="${i}">
-        +
-        </button>
-        <div class="unitis" id="unitys-of-${i}" >0</div>
+      <div class="masomeno">
         <button class="btn btn-sm rm-card" id="${i}">
         -
+        </button>
+        <div class="unitis" id="unitys-of-${i}" >0</div>
+        <button class="btn btn-sm add-card" id="${i}">
+        +
         </button>
       </div>
     </div>
@@ -41,8 +42,8 @@ const prodsOfActCard = (wc) => {
   const lisOfCard = document.querySelectorAll('#carrinho-list li a')
   return [...lisOfCard].map(e => {
     let w = e.innerText;
-    let firstPart = w.slice(0,5);
-    let lastPart = w.slice(5,w.length);
+    let firstPart = w.slice(0,w.indexOf(' '));
+    let lastPart = w.slice(w.indexOf(' '),w.length);
     firstPart = firstPart.replace(/[0-9]/g,'');
     let juntada = firstPart + lastPart;
     console.log(juntada)
@@ -111,7 +112,16 @@ const changeMessageOfCardBuy = () => {
   document.querySelector('#comprar-carrinho').href = `https://wa.me/5522998947260?text=${convertedText.slice(0,convertedText.length - 1)}`
 }
 
+const changeAccPrice = (e) => {
+  const ID = e.target.id;
+  const qnt = parseInt(document.querySelector(`#unitys-of-${ID}`).innerHTML);
+  const price = tabelinha.prices[ID];
+  const acc = document.querySelector(`#ac-price-of-${ID}`);
+  acc.innerHTML = `R$${(qnt* parseFloat(price)).toFixed(2)}`.replace('.',',');
+}
+
 
 createProduct();
 for (let i of document.querySelectorAll('.add-card')){i.addEventListener('click', addProduct);}
 for (let i of document.querySelectorAll('.rm-card')){i.addEventListener('click', rmProduct);}
+[...document.querySelectorAll( '.rm-card'),...document.querySelectorAll('.add-card')].forEach((e) => e.addEventListener('click', changeAccPrice));
