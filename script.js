@@ -60,8 +60,9 @@ const addRmProduct = (e) => {
   const dive = document.querySelector(`#unitys-of-${ID}`);
   const span = document.querySelector(`#spanOf${ID}`);
   const params = [ID,produto,listCard,dive,span];
-  
+
   lasClasses.some(el => el == 'add-card') ? addProduct(...params) : rmProduct(...params);
+  changeAccPrice(ID);
   changeMessageOfCardBuy()
 }
 
@@ -103,8 +104,7 @@ const changeMessageOfCardBuy = () => {
   document.querySelector('#comprar-carrinho').href = `https://wa.me/5522998947260?text=${convertedText.slice(0,convertedText.length - 1)}`
 }
 
-const changeAccPrice = (e) => {
-  const ID = e.target.id;
+const changeAccPrice = (ID) => {
   const qnt = parseInt(document.querySelector(`#unitys-of-${ID}`).innerHTML);
   const price = tabelinha.prices[ID];
   const acc = document.querySelector(`#ac-price-of-${ID}`);
@@ -114,14 +114,4 @@ const changeAccPrice = (e) => {
 
 createProduct();
 
-document.querySelectorAll('.add-card').forEach(e =>{
-  //e.addEventListener('click', addProduct);
-  e.addEventListener('click', addRmProduct);
-  e.addEventListener('click', changeAccPrice);
-})
-
-document.querySelectorAll('.rm-card').forEach(e =>{
-  //e.addEventListener('click', rmProduct);
-  e.addEventListener('click', addRmProduct);
-  e.addEventListener('click', changeAccPrice);
-})
+[...document.querySelectorAll('.add-card'),...document.querySelectorAll('.rm-card')].forEach( e =>  e.addEventListener('click', addRmProduct));
