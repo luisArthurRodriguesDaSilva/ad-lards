@@ -46,12 +46,10 @@ const prodsOfActCard = (wc) => {
     let lastPart = w.slice(w.indexOf(' '),w.length);
     firstPart = firstPart.replace(/[0-9]/g,'');
     let juntada = firstPart + lastPart;
-    console.log(juntada)
     return(juntada.slice(1,juntada.length));
   })
 }
   catch(e){
-    console.log(e);
     return [...wc];
   }
 }
@@ -60,6 +58,19 @@ const changeUnity = (id,v) => {
   const span = document.querySelector(`#spanOf${id}`);
   span.innerHTML = `${parseInt(span.innerHTML)+v}`;  
   span.innerHTML += ' ';
+}
+
+const addRmProduct = (e) => {
+  const listCard = document.querySelector('#carrinho-list');
+
+  const lasClasses = [...e.target.classList];
+  const ID = e.target.id;
+  const produto = tabelinha.names[ID];
+  const dive = document.querySelector(`#unitys-of-${ID}`);
+  const span = document.querySelector(`#spanOf${ID}`);
+
+  if(lasClasses.some(elem => elem == 'add-card')) console.log('tem add')
+  else if(lasClasses.some(elem => elem == 'rm-card'))console.log('tem rm')
 }
 
 const addProduct = (e) => {
@@ -127,8 +138,10 @@ createProduct();
 document.querySelectorAll('.add-card').forEach(e =>{
   e.addEventListener('click', addProduct);
   e.addEventListener('click', changeAccPrice);
+  e.addEventListener('click', addRmProduct);
 })
 document.querySelectorAll('.rm-card').forEach(e =>{
   e.addEventListener('click', rmProduct);
   e.addEventListener('click', changeAccPrice);
+  e.addEventListener('click', addRmProduct);
 })
