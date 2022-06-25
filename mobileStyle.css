@@ -42,10 +42,6 @@ section{
   max-height: 38vh;
 }
 
-.masomeno{
-  margin-top: 2px;
-}
-
 @media (min-width:700px){
 
   header{
