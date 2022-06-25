@@ -119,13 +119,14 @@ const changeMessageOfCardBuy = () => {
 const changeTotalPrice = () => {
   const accumsPrices = document.querySelectorAll('.accum-price');
   let total = 0;
-  for(let i of accumsPrices){
-    console.log(i.innerHTML);
-    total += parseFloat(i.innerHTML.replace('R$','').replace(',','.'));
-  }
-  console.log(total);
-  totalPrice.innerHTML = `R$${total.toFixed(2)}`.replace('.',',');
+  let value = 0;
 
+  accumsPrices.forEach(e => {
+    value = parseFloat(e.innerHTML.replace('R$','').replace(',','.'));
+    total+=value;
+  })
+
+  totalPrice.innerHTML = `R$${total.toFixed(2)}`.replace('.',',');
 }
 
 const changeAccPrice = (ID) => {
