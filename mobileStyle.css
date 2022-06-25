@@ -58,8 +58,13 @@ section{
 
   .baixo .masomeno{
     max-height: 9vh;
-    height: 7vh;
+    min-height: 7vh;
     min-width: 30%;
+  }
+
+  .masomeno > button{
+    height: 7vh;
+    width: 7vh;
   }
 
   .baixo > div > *{

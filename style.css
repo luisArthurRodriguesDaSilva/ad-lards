@@ -169,7 +169,7 @@ section{
 
 .baixo .masomeno {
   background: var(--secondary-color);
-  max-height: 36px;
+  max-height: 80%;
   min-width: 30%;
   flex: 1 1;
   max-width: 60%;
@@ -191,12 +191,6 @@ section{
   font-weight: 500;
   margin: none;
   background-color: aliceblue;
-}
-
-.add-card,.rm-card{
-  height: auto;
-  width: auto;
-  margin: none;
 }
 
 .add-card{
