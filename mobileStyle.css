@@ -9,12 +9,11 @@ header{
   border-radius: 0px 0px 5px 5px;
 }
 
-.btn-group button{
+.btn-group button,#total-price{
   height: 45px;
 }
 
 #total-price{
-  height: 9vh;
   font-size: 15px;
 }
 
