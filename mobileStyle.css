@@ -13,6 +13,11 @@ header{
   height: 45px;
 }
 
+#total-price{
+  height: 9vh;
+  font-size: 15px;
+}
+
 main{
   display: flex;
   flex-direction: column;
