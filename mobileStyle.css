@@ -55,7 +55,7 @@ section{
   .baixo{
     height: 10vh;
   }
-  
+
   .baixo > div > *{
     font-size: 15px;
   }
