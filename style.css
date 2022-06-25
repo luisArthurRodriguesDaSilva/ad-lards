@@ -163,6 +163,10 @@ section{
   background-color: azure;
 }
 
+.masomeno{
+  align-content: center;
+}
+
 .baixo .masomeno {
   background: var(--secondary-color);
   max-height: 36px;
@@ -184,7 +188,7 @@ section{
   justify-content: center;
   align-items: center;
   font-family: 'Comfortaa', cursive;
-  font-weight: 590;
+  font-weight: 500;
   margin: none;
   background-color: aliceblue;
 }

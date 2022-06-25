@@ -58,8 +58,8 @@ section{
 
   .baixo .masomeno{
     max-height: 9vh;
+    height: 7vh;
     min-width: 30%;
-    max-width: 60%;
   }
 
   .baixo > div > *{
