@@ -1,6 +1,15 @@
 import tabelinha from './relat.js';
 const main = document.querySelector('main');
 
+const replaceLast = (str,char,newChar) => {
+  let reverted = str.split("").reverse().join("");
+  let place = reverted.indexOf(char);
+  let arraio = reverted.split("");
+  arraio[place] = newChar;
+  arraio = arraio.reverse().join("");
+  return arraio
+}
+
 const createProduct = () => {
   for(let i = 0; i < tabelinha.adressesOfImg.length; i+=1){
     main.innerHTML += 
@@ -98,8 +107,12 @@ const changeMessageOfCardBuy = () => {
   for(let i of produtosComprados){
     text += `  ${i.innerText},`;
   }
+
   let convertedText = text.replaceAll(' ','%20');
-  document.querySelector('#comprar-carrinho').href = `https://wa.me/5522998947260?text=${convertedText.slice(0,convertedText.length - 1)}`
+  convertedText = convertedText.slice(0,convertedText.length -1);
+  convertedText = replaceLast(convertedText,',','%20e%20');
+  document.querySelector('#comprar-carrinho').href = `https://wa.me/5522998947260?text=${convertedText}`
+  console.log(convertedText);
 }
 
 const changeAccPrice = (ID) => {
@@ -108,7 +121,6 @@ const changeAccPrice = (ID) => {
   const acc = document.querySelector(`#ac-price-of-${ID}`);
   acc.innerHTML = `R$${(qnt* parseFloat(price)).toFixed(2)}`.replace('.',',');
 }
-
 
 createProduct();
 
