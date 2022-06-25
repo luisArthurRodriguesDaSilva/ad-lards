@@ -193,6 +193,12 @@ section{
   background-color: aliceblue;
 }
 
+.add-card,.rm-card{
+  height: auto;
+  width: auto;
+  margin: none;
+}
+
 .add-card{
   border-radius: 0px 6px 6px 0px;
 }
