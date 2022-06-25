@@ -42,12 +42,6 @@ section{
   max-height: 38vh;
 }
 
-.baixo .masomeno{
-  max-height: 9vh;
-  min-height: 7vh;
-  min-width: 30%;
-}
-
 @media (min-width:700px){
 
   header{
@@ -61,7 +55,7 @@ section{
   .baixo{
     height: 10vh;
   }
-
+  
   .baixo > div > *{
     font-size: 15px;
   }
