@@ -75,13 +75,27 @@ header .btn-container
   gap: 10px;
 }
 
+#total-price{
+  font-size: 20px;
+  font-weight: 100;
+  background-color: var(--fouth-color);
+  height: 5vh;
+  min-width: 100px;
+  width: auto;
+  padding: 10px;
+  border-radius:5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn-group button{
   height: 7vh;
 }
 
 
 #car-img{
-  height: 100%;
+  height: 90%;
 }
 
 .btn-group ul {
@@ -160,6 +174,10 @@ section{
   border-radius: 8.5px;
 }
 
+.baixo > div > *{
+  font-size: 3vh;
+}
+
 .unitis,.baixo button{
   display: flex;
   flex: 1 0 20px;
@@ -214,22 +232,4 @@ section{
 .baixo a:hover{
   background-color: rgba(238, 190, 85, 0.986);
   box-shadow: 0px 1px 2px hsla(41, 67%, 39%, 0.637);
-}
-
-.material-symbols-outlined {
-  line-height: none;
-  margin: 0%;
-  margin-top:15%;
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
-}
-
-.rm-card:disabled,
-.rm-card[disabled]{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
 }

@@ -1,14 +1,14 @@
 import tabelinha from './relat.js';
 const main = document.querySelector('main');
-const listCard = document.querySelector('#carrinho-list');
+const totalPrice = document.querySelector('#total-price');
 
-const verifyExistence = (arraio,coisa) => {
-  for(let i of arraio){
-    if(i == coisa){
-      return true;
-    }  
-  }
-  return false; 
+const replaceLast = (str,char,newChar) => {
+  let reverted = str.split("").reverse().join("");
+  let place = reverted.indexOf(char);
+  let arraio = reverted.split("");
+  arraio[place] = newChar;
+  arraio = arraio.reverse().join("");
+  return arraio
 }
 
 const createProduct = () => {
@@ -36,8 +36,7 @@ const createProduct = () => {
 `;
   }
 }
-
-const prodsOfActCard = (wc) => {
+const productsOfActCard = (wc) => {
   try{
   const lisOfCard = document.querySelectorAll('#carrinho-list li a')
   return [...lisOfCard].map(e => {
@@ -46,12 +45,10 @@ const prodsOfActCard = (wc) => {
     let lastPart = w.slice(w.indexOf(' '),w.length);
     firstPart = firstPart.replace(/[0-9]/g,'');
     let juntada = firstPart + lastPart;
-    console.log(juntada)
     return(juntada.slice(1,juntada.length));
   })
 }
   catch(e){
-    console.log(e);
     return [...wc];
   }
 }
@@ -62,43 +59,46 @@ const changeUnity = (id,v) => {
   span.innerHTML += ' ';
 }
 
-const addProduct = (e) => {
-
+const addRmProduct = (e) => {
   const listCard = document.querySelector('#carrinho-list');
-  const ID = e.target.id;
-  let produto = tabelinha.names[ID];
 
-  
-  const dive = document.querySelector(`#unitys-of-${ID}`); 
+  const lasClasses = [...e.target.classList];
+  const ID = e.target.id;
+  const produto = tabelinha.names[ID];
+  const dive = document.querySelector(`#unitys-of-${ID}`);
+  const span = document.querySelector(`#spanOf${ID}`);
+  const params = [ID,produto,listCard,dive,span];
+
+  lasClasses.some(el => el == 'add-card') ? addProduct(...params) : rmProduct(...params);
+  changeAccPrice(ID);
+  changeMessageOfCardBuy()
+}
+
+const addProduct = (ID,produto,listCard,dive,span) => {
+
   dive.innerHTML = `${parseInt(dive.innerHTML)+1}`;
-  if(verifyExistence(prodsOfActCard(produto),produto)){
-    changeUnity(e.target.id,1);
+
+  if(productsOfActCard(produto).some(el => el == produto)){
+    changeUnity(ID,1);
   }
   else{
     const li = document.createElement("li");
     li.innerHTML = `<a class="dropdown-item prod" href="#produto-${ID}"><span id="spanOf${ID}">1 </span>${produto}</a>`;
     listCard.appendChild(li);
   }
-  changeMessageOfCardBuy();
 }
 
-const rmProduct = (e) => {
+const rmProduct = (ID,produto,listCard,dive,span) => {
 
-  const listCard = document.querySelector('#carrinho-list');
-  const ID = e.target.id;
-  const span = document.querySelector(`#spanOf${ID}`);
-  let produto = tabelinha.names[ID];
   try{
     if(parseInt(span.innerHTML) > 1){
-    changeUnity(e.target.id,-1);
+    changeUnity(ID,-1);
     }
     else{
       span.parentNode.remove();
     }
-    changeMessageOfCardBuy();
-    const dive = document.querySelector(`#unitys-of-${ID}`); 
     dive.innerHTML = `${parseInt(dive.innerHTML)-1}`;
-  }catch(e){console.log('ja deu cr  ' + e)}
+  } catch(e){console.log('ja deu cr  ' + e)}
 
 }
 
@@ -108,20 +108,34 @@ const changeMessageOfCardBuy = () => {
   for(let i of produtosComprados){
     text += `  ${i.innerText},`;
   }
+
   let convertedText = text.replaceAll(' ','%20');
-  document.querySelector('#comprar-carrinho').href = `https://wa.me/5522998947260?text=${convertedText.slice(0,convertedText.length - 1)}`
+  convertedText = convertedText.slice(0,convertedText.length -1);
+  convertedText = replaceLast(convertedText,',','%20e%20');
+  document.querySelector('#comprar-carrinho').href = `https://wa.me/5522998947260?text=${convertedText}`
+  changeTotalPrice();
 }
 
-const changeAccPrice = (e) => {
-  const ID = e.target.id;
+const changeTotalPrice = () => {
+  const accumsPrices = document.querySelectorAll('.accum-price');
+  let total = 0;
+  let value = 0;
+
+  accumsPrices.forEach(e => {
+    value = parseFloat(e.innerHTML.replace('R$','').replace(',','.'));
+    total+=value;
+  })
+
+  totalPrice.innerHTML = `R$${total.toFixed(2)}`.replace('.',',');
+}
+
+const changeAccPrice = (ID) => {
   const qnt = parseInt(document.querySelector(`#unitys-of-${ID}`).innerHTML);
   const price = tabelinha.prices[ID];
   const acc = document.querySelector(`#ac-price-of-${ID}`);
   acc.innerHTML = `R$${(qnt* parseFloat(price)).toFixed(2)}`.replace('.',',');
 }
 
-
 createProduct();
-for (let i of document.querySelectorAll('.add-card')){i.addEventListener('click', addProduct);}
-for (let i of document.querySelectorAll('.rm-card')){i.addEventListener('click', rmProduct);}
-[...document.querySelectorAll( '.rm-card'),...document.querySelectorAll('.add-card')].forEach((e) => e.addEventListener('click', changeAccPrice));
+
+[...document.querySelectorAll('.add-card'),...document.querySelectorAll('.rm-card')].forEach( e =>  e.addEventListener('click', addRmProduct));
