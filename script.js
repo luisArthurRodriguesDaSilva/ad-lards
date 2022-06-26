@@ -1,6 +1,5 @@
 import tabelinha from './relat.js';
 const main = document.querySelector('main');
-const totalPrice = document.querySelector('#total-price');
 
 const replaceLast = (str,char,newChar) => {
   let reverted = str.split("").reverse().join("");
@@ -118,6 +117,7 @@ const changeMessageOfCardBuy = () => {
 
 const changeTotalPrice = () => {
   const accumsPrices = document.querySelectorAll('.accum-price');
+  const totalPrice = document.querySelectorAll('.total-price');
   let total = 0;
   let value = 0;
 
@@ -126,7 +126,8 @@ const changeTotalPrice = () => {
     total+=value;
   })
 
-  totalPrice.innerHTML = `R$${total.toFixed(2)}`.replace('.',',');
+  totalPrice.forEach(e =>e.innerHTML = `R$${total.toFixed(2)}`.replace('.',','));
+  console.log(totalPrice);
 }
 
 const changeAccPrice = (ID) => {

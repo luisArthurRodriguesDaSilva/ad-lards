@@ -16,7 +16,7 @@ border-bottom: var(--fivth-color) 1px solid;
   justify-content: space-around;
   gap: 10px;
 }
-.btn-container #total-price,.btn-container #carrinho-container
+.btn-container .total-price,.btn-container .carrinho-container
 {
   display: flex;
 }
