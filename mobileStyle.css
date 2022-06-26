@@ -9,9 +9,18 @@ header{
   border-radius: 0px 0px 5px 5px;
 }
 
-#Luar-cima{
-  display: none;
+.main-top{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 1vh;
 }
+
+.main-top #total-price ,.main-top #carrinho-container{
+  display: flex;
+}
+
 .btn-group button,#total-price{
   height: 45px;
 }
