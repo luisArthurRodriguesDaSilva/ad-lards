@@ -8,6 +8,18 @@ background-color: rgba(255, 255, 255, 0.904);
 border-bottom: var(--fivth-color) 1px solid;
 }
 
+
+.btn-container
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+}
+.btn-container .total-price,.btn-container .carrinho-container
+{
+  display: flex;
+}
 /* 
 .btn-group button{
   height: 45px;

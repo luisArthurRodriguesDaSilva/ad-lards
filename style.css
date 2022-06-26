@@ -58,7 +58,6 @@ header{
   justify-content:space-around;
 }
 
-
 #header-container > img{
   height: 95%;
 }
@@ -67,15 +66,7 @@ header{
   background-color: var(--main-color);
 }
 
-header .btn-container
-{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 10px;
-}
-
-#total-price{
+.total-price{
   font-size: 15px;
   font-weight:100;
   background-color: var(--fouth-color);
@@ -103,15 +94,13 @@ header .btn-container
 }
 
 
-#carrinho-container button,#carrinho-container ul{
+.carrinho-container button,.carrinho-container ul{
   background: var(--third-color);
 }
 
 #comprar-carrinho{
   font-weight: bolder;
 }
-
-
 main{
   display: flex;
   flex-wrap: wrap;
@@ -236,4 +225,9 @@ section{
 .baixo a:hover{
   background-color: rgba(238, 190, 85, 0.986);
   box-shadow: 0px 1px 2px hsla(41, 67%, 39%, 0.637);
+}
+
+
+.total-price , .carrinho-container,.main-top{
+  display: none;
 }

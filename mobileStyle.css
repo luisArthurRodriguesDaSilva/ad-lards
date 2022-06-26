@@ -5,15 +5,26 @@
 
 header{
   height: 55px;
-  position: fixed;
   border-radius: 0px 0px 5px 5px;
 }
 
-.btn-group button,#total-price{
+.main-top{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 1vh;
+}
+
+.main-top .total-price ,.main-top .carrinho-container{
+  display: flex;
+}
+
+.btn-group button,.total-price{
   height: 45px;
 }
 
-#total-price{
+.total-price{
   font-size: 15px;
 }
 
@@ -21,7 +32,6 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
   width: 95vw;
 }
 
