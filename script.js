@@ -52,20 +52,19 @@ const productsOfActCard = (wc) => {
   }
 }
 
-const changeUnity = (id,v) => {
-  const span = document.querySelector(`#spanOf${id}`);
-  span.innerHTML = `${parseInt(span.innerHTML)+v}`;  
-  span.innerHTML += ' ';
+const changeUnity = (id,v,span) => {
+  span.forEach(e => {e.innerHTML = `${parseInt(e.innerHTML)+v}`;
+  e.innerHTML += ' ';})
 }
 
 const addRmProduct = (e) => {
-  const listCard = document.querySelector('#carrinho-list');
+  const listCard = document.querySelectorAll('#carrinho-list');
 
   const lasClasses = [...e.target.classList];
   const ID = e.target.id;
   const produto = tabelinha.names[ID];
   const dive = document.querySelector(`#unitys-of-${ID}`);
-  const span = document.querySelector(`#spanOf${ID}`);
+  const span = document.querySelectorAll(`#spanOf${ID}`);
   const params = [ID,produto,listCard,dive,span];
 
   lasClasses.some(el => el == 'add-card') ? addProduct(...params) : rmProduct(...params);
@@ -78,12 +77,13 @@ const addProduct = (ID,produto,listCard,dive,span) => {
   dive.innerHTML = `${parseInt(dive.innerHTML)+1}`;
 
   if(productsOfActCard(produto).some(el => el == produto)){
-    changeUnity(ID,1);
+    changeUnity(ID,1,span);
   }
   else{
-    const li = document.createElement("li");
-    li.innerHTML = `<a class="dropdown-item prod" href="#produto-${ID}"><span id="spanOf${ID}">1 </span>${produto}</a>`;
-    listCard.appendChild(li);
+    listCard.forEach(e=>{
+      const li = document.createElement("li");
+      li.innerHTML = `<a class="dropdown-item prod" href="#produto-${ID}"><span id="spanOf${ID}">1 </span>${produto}</a>`;  
+      e.appendChild(li)});
   }
 }
 
@@ -91,10 +91,10 @@ const rmProduct = (ID,produto,listCard,dive,span) => {
 
   try{
     if(parseInt(span.innerHTML) > 1){
-    changeUnity(ID,-1);
+    changeUnity(ID,-1,span);
     }
     else{
-      span.parentNode.remove();
+      span.forEach(e =>e.parentNode.remove());
     }
     dive.innerHTML = `${parseInt(dive.innerHTML)-1}`;
   } catch(e){console.log('ja deu cr  ' + e)}
