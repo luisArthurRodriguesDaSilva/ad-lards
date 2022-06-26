@@ -111,7 +111,7 @@ const changeMessageOfCardBuy = () => {
   let convertedText = text.replaceAll(' ','%20');
   convertedText = convertedText.slice(0,convertedText.length -1);
   convertedText = replaceLast(convertedText,',','%20e%20');
-  document.querySelector('#comprar-carrinho').href = `https://wa.me/5522998947260?text=${convertedText}`
+  document.querySelectorAll('#comprar-carrinho').forEach(e=>e.href = `https://wa.me/5522998947260?text=${convertedText}`)
   changeTotalPrice();
 }
 
