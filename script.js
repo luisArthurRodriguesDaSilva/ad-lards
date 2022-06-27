@@ -103,15 +103,14 @@ const rmProduct = (ID,produto,listCard,dive,span) => {
 
 const changeMessageOfCardBuy = () => {
   const produtosComprados = document.querySelectorAll('#carrinho-list .prod');
-  let text = 'Quero comprar ';
+  let text = 'Quero comprar%0A';
   for(let i of produtosComprados){
-    text += `  ${i.innerText},`;
+    text += `${i.innerText}%0A`;
   }
-  let convertedText = text.replaceAll(' ','%20').replaceAll(',','%0A');
+  let convertedText = text.replaceAll(' ','%20');
   convertedText = convertedText.slice(0,convertedText.length -1);
-  convertedText = replaceLast(convertedText,',','%20e');
   convertedText = convertedText + `%20no%20valor%20de%20${document.querySelector('.total-price').innerHTML}`;
-  document.querySelectorAll('#comprar-carrinho').forEach(e=>e.href = `https://wa.me/5522998947260?text=${convertedText}`)
+  document.querySelectorAll('#comprar-carrinho').forEach(e => e.href = `https://wa.me/5522998947260?text=${convertedText}`)
   changeTotalPrice();
 }
 
