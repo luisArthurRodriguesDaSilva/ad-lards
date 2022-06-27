@@ -107,7 +107,7 @@ const changeMessageOfCardBuy = () => {
   for(let i of produtosComprados){
     text += `  ${i.innerText},`;
   }
-  let convertedText = text.replaceAll(' ','%20');
+  let convertedText = text.replaceAll(' ','%20').replaceAll(',','%0A');
   convertedText = convertedText.slice(0,convertedText.length -1);
   convertedText = replaceLast(convertedText,',','%20e');
   convertedText = convertedText + `%20no%20valor%20de%20${document.querySelector('.total-price').innerHTML}`;
