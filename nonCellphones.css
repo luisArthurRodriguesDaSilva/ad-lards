@@ -8,6 +8,15 @@ background-color: rgba(255, 255, 255, 0.904);
 border-bottom: var(--fivth-color) 1px solid;
 }
 
+#bannier > img{
+  height: calc(100vh - 80px);
+  width: 100%;
+}
+
+#bannier-text{
+  color: black;
+  font-size: 10vh;
+}
 
 .btn-container
 {

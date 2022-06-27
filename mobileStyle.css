@@ -33,6 +33,11 @@ header{
   width: 100%;
 }
 
+#bannier-text{
+  color: black;
+  font-size: 6vh;
+}
+
 main{
   display: flex;
   flex-direction: column;
