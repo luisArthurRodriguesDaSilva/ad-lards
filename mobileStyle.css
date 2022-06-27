@@ -28,6 +28,11 @@ header{
   font-size: 15px;
 }
 
+#bannier > img{
+  height: calc(100vh - 60px);
+  width: 100%;
+}
+
 main{
   display: flex;
   flex-direction: column;
