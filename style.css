@@ -93,9 +93,13 @@ header{
   background-color: rgb(139, 238, 255);
 }
 
-
 .carrinho-container button,.carrinho-container ul{
   background: var(--third-color);
+}
+
+.carrinho-container button,.total-price{
+  
+  border: 1px solid rgba(0, 0, 0, 0.438);
 }
 
 #comprar-carrinho{
