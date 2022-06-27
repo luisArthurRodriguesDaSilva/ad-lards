@@ -17,7 +17,7 @@ const createProduct = () => {
   <section>
     <div class="cima">
         <img src="${tabelinha.adressesOfImg[i]}" alt="imagem do produto ${tabelinha.names[i]}" id="produto-${i}">
-        <p id="price-of${i}">R$${tabelinha.prices[i].replace('.',',')}</p>
+        <p id="price-of${i}">R$${parseFloat(tabelinha.prices[i]).toFixed(2).replace('.',',')}</p>
         <div class="accum-price" id="ac-price-of-${i}">R$0,00</div>
     </div>
     <div class="baixo">
@@ -80,7 +80,7 @@ const addProduct = (ID,produto,listCard,dive,span) => {
     changeUnity(ID,1,span);
   }
   else{
-    listCard.forEach(e=>{
+    listCard.forEach(e => {
       const li = document.createElement("li");
       li.innerHTML = `<a class="dropdown-item prod" href="#produto-${ID}"><span id="spanOf${ID}">1 </span>${produto}</a>`;  
       e.appendChild(li)});

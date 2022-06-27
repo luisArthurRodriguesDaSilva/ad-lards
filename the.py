@@ -7,7 +7,7 @@ prices = []
 
 for i in range(len(adresses)):
     print(f"preço do {names[i]} é")
-    prices.append(input()66)
+    prices.append(str(float(input())))
     print(prices)
 
 print(os.listdir('imagens'))
