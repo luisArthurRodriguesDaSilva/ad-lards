@@ -29,7 +29,8 @@ header{
 }
 
 #bannier > img{
-  width: 100%;
+  max-height: calc(100vh - 60px);
+  max-width: 100vw;
 }
 
 #bannier-text{
