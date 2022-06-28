@@ -21,11 +21,8 @@ header{
 }
 
 #bannier {
-  display: flex;
-  flex-direction: column;
+  height: calc(100vh - var(--header-height) - 30px);
   width: 80vw;
-  align-items: left;
-  justify-content: center;
 }
 
 #bannier p{

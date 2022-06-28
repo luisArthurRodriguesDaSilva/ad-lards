@@ -21,14 +21,18 @@ header button{
   height: fit-content;
 }
 
-#bannier > img{
-  height: calc(100vh - 80px);
-  width: 100%;
+#bannier{
+  min-height: 500px;
+  height: calc(100vh - var(--header-height) - 30px);
 }
 
 #bannier-text{
   color: black;
-  font-size: 10vh;
+  font-size: 50px;
+}
+
+#bannier p{
+  min-width: 700px;
 }
 
 .btn-container
