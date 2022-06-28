@@ -62,6 +62,18 @@ header{
   height: 95%;
 }
 
+
+#fig-do-fundo{
+  display: none;
+  max-height: 100px;
+  max-width: 100px;
+  z-index: -1;
+  position: absolute;
+  top: 10vh;
+  left: 50vh;
+  transform: rotate(37deg);
+}
+
 #bannierer-container{
   display: flex;
   flex-direction: row;
@@ -73,7 +85,7 @@ header{
 #bannier {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - var(--header-height) - 30px);
   width: 50vw;
   align-items: left;
   justify-content: center;
@@ -148,7 +160,7 @@ main{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 2vh;
+  margin: 2vh;
   background-color: var(--third-color);
   height: fit-content; /*future fit content*/
   width: 95vw;

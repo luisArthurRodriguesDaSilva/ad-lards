@@ -3,10 +3,39 @@
   width: 0px;
 }
 
+:root{
+  --header-height : 55px;
+}
+
 header{
-  height: 55px;
+  height: var(--header-height);
   border-radius: 0px 0px 5px 5px;
 }
+
+#bannierer-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+#bannier {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  align-items: left;
+  justify-content: center;
+}
+
+#bannier p{
+  max-width: 100%;
+}
+
+#citacao{
+  font-size: 25px;
+}
+
 
 .main-top{
   display: flex;
@@ -27,6 +56,8 @@ header{
 .total-price{
   font-size: 15px;
 }
+
+
 
 main{
   display: flex;
