@@ -2,7 +2,7 @@ const aviso = document.querySelector('#aviso');
 const bannier = document.querySelector('#bannier');
 const bannierContainer = document.querySelector('#bannierer-container');
 
-const acrecimo = (window.matchMedia("(orientation: portrait)").matches) ? 200 : -30;
+const acrecimo = (window.matchMedia("(orientation: portrait)").matches) ? -200 : -30;
 const h = screen.height + acrecimo ;
 
 const sumico = (e) => {
