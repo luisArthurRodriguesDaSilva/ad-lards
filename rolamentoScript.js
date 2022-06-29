@@ -19,7 +19,8 @@ const sumico = (e) => {
     console.log("heigth " + bannierContainer.clientHeight);
 }
 
-const sumi = setInterval(sumico, 50);
+const sumi = setInterval(sumico, 
+    (window.matchMedia("(orientation: portrait)").matches) ? 100 : 10);
 
 
 window.addEventListener('scroll',(e) => {
