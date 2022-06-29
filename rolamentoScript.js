@@ -1,8 +1,8 @@
 const aviso = document.querySelector('#aviso');
 const bannier = document.querySelector('#bannier');
 const bannierContainer = document.querySelector('#bannierer-container');
-
-const acrecimo = (window.matchMedia("(orientation: portrait)").matches) ? -200 : -30;
+const cellphone = (window.matchMedia("(orientation: portrait)").matches) 
+const acrecimo =  (cellphone) ? -200 : -30;
 const h = screen.height + acrecimo ;
 
 const sumico = (e) => {
@@ -19,8 +19,10 @@ const sumico = (e) => {
     console.log("heigth " + bannierContainer.clientHeight);
 }
 
-const sumi = setInterval(sumico, 
-    (window.matchMedia("(orientation: portrait)").matches) ? 10 : 100);
+const sumi = setInterval(
+    sumico, 
+    (cellphone) ? 10 : 100
+  );
 
 
 window.addEventListener('scroll',(e) => {
