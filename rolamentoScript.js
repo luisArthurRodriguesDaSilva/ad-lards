@@ -20,7 +20,7 @@ const sumico = (e) => {
 }
 
 const sumi = setInterval(sumico, 
-    (window.matchMedia("(orientation: portrait)").matches) ? 100 : 10);
+    (window.matchMedia("(orientation: portrait)").matches) ? 10 : 100);
 
 
 window.addEventListener('scroll',(e) => {
