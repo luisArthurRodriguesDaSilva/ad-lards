@@ -23,7 +23,7 @@ body,section,.limitator,.cima{
 }
 
 body{
-  z-index: -2;
+  z-index: -20;
   overflow-x: hidden;
   background: var(--main-linear-gradient);
   background-size: 400% 400%;
@@ -75,6 +75,7 @@ header{
 }
 
 #bannierer-container{
+  z-index: -199;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -83,6 +84,7 @@ header{
 }
 
 #bannier {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   width: 50vw;
@@ -148,6 +150,10 @@ header{
   align-items: center;
   justify-content: center;
   max-width: 100%;
+}
+
+#bannier-container * {
+  transition: all 0.5s;
 }
 
 #bannier{
@@ -282,6 +288,6 @@ section{
 }
 
 
-.total-price , .carrinho-container,.main-top{
+.banido,.total-price , .carrinho-container,.main-top{
   display: none;
 }

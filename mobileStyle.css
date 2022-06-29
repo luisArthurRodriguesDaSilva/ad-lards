@@ -21,7 +21,6 @@ header{
 }
 
 #bannier {
-  height: calc(100vh - var(--header-height) - 30px);
   width: 80vw;
 }
 

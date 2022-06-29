@@ -3,17 +3,32 @@ const bannier = document.querySelector('#bannier');
 const bannierContainer = document.querySelector('#bannierer-container');
 
 const sumico = (e) => {
-  let h = screen.height;
-  let actLocal = window.scrollY;
-  let ratio = actLocal/h;
-  let opc = 1-ratio;
-  bannierContainer.style.opacity = opc;
-  if(opc < 0.1){
-  bannier.style.display = 'none';
-  aviso.style.display = 'none';
-  }
+    let h = screen.height - 30 ;
+    let actLocal = window.scrollY;
+    let diff = (h - actLocal).toFixed(2);
+   console.log('diff' + diff);
+    if(diff > 0){
+      bannier.style.height =  diff + 'px';
+      let opc = ((diff / h) ** 5).toFixed(2);
+      console.log("opc " + opc);
+      bannier.style.opacity = opc;
+      aviso.style.opacity = opc;
+    }
+    console.log("heigth " + bannierContainer.clientHeight);
 }
 
+const sumi = setInterval(sumico, 50);
 
 
-window.addEventListener('scroll',sumico);
+window.addEventListener('scroll',(e) => {
+  let h = screen.height - 30;
+  let actLocal = window.scrollY;
+  let diff = (h - actLocal).toFixed(2);
+  if(diff <= 0){
+    (bannierContainer.style.display != 'none') ? bannierContainer.style.display = 'none' : console.log('none');
+  clearInterval(sumi);
+  console.log('clear')
+  
+  ;}
+  }
+);
