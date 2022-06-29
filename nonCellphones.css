@@ -21,12 +21,8 @@ header button{
   height: fit-content;
 }
 
-#bannier{
-}
-
-#bannier-text{
-  color: black;
-  font-size: 50px;
+#bannierer-container{
+  width: 50vw;
 }
 
 #bannier p{

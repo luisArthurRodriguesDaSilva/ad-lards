@@ -2,8 +2,11 @@ const aviso = document.querySelector('#aviso');
 const bannier = document.querySelector('#bannier');
 const bannierContainer = document.querySelector('#bannierer-container');
 const cellphone = (window.matchMedia("(orientation: portrait)").matches) 
-const acrecimo =  (cellphone) ? -200 : -30;
-const h = screen.height + acrecimo ;
+const decrecimo =  (cellphone) ? 50*3 : 75*3;
+const h = screen.height - decrecimo ;
+
+
+bannier.style.height =  h + 'px';
 
 const sumico = (e) => {
     let actLocal = window.scrollY;
@@ -20,8 +23,7 @@ const sumico = (e) => {
 }
 
 const sumi = setInterval(
-    sumico, 
-    (cellphone) ? 10 : 100
+    sumico, 10
   );
 
 
