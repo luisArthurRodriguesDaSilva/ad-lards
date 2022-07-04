@@ -90,7 +90,7 @@ const addProduct = (ID,produto,listCard,dive,span) => {
 const rmProduct = (ID,produto,listCard,dive,span) => {
 
   try{
-    if(parseInt(span.innerHTML) > 1){
+    if(parseInt(span[0].innerHTML) > 1){
     changeUnity(ID,-1,span);
     }
     else{

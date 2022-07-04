@@ -1,13 +1,33 @@
+
+:root{
+  --header-height : 75px;
+}
+
 body{
   zoom: 1;
 }
 
 header{
-height: 75px;
+height: var(--header-height);
 background-color: rgba(255, 255, 255, 0.904);
 border-bottom: var(--fivth-color) 1px solid;
 }
 
+header button{
+  height: 50px;
+}
+
+.total-price{
+  height: fit-content;
+}
+
+#bannierer-container{
+  width: 50vw;
+}
+
+#bannier p{
+  min-width: 700px;
+}
 
 .btn-container
 {
@@ -16,15 +36,11 @@ border-bottom: var(--fivth-color) 1px solid;
   justify-content: space-around;
   gap: 10px;
 }
+
 .btn-container .total-price,.btn-container .carrinho-container
 {
   display: flex;
 }
-/* 
-.btn-group button{
-  height: 45px;
-} */
-
 
 .btn-sm{
   font-size: larger;
