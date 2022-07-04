@@ -290,3 +290,12 @@ section{
 .banido,.total-price , .carrinho-container,.main-top{
   display: none;
 }
+
+
+
+.valores{
+  display: flex;
+  margin: none
+  ;
+}
+.valores * {margin : none;}
