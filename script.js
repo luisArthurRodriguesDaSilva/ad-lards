@@ -17,9 +17,13 @@ const createProduct = () => {
   <section>
     <div class="cima">
         <img src="${tabelinha.adressesOfImg[i]}" alt="imagem do produto ${tabelinha.names[i]}" id="produto-${i}">
-        <p id="price-of${i}">R$${parseFloat(tabelinha.prices[i]).toFixed(2).replace('.',',')}</p>
-        <div class="accum-price" id="ac-price-of-${i}">R$0,00</div>
-    </div>
+        
+        <p>${tabelinha.names[i]}</p>
+        <div class="valores">
+          <div class="prod-p" id="price-of${i}">R$${parseFloat(tabelinha.prices[i]).toFixed(2).replace('.',',')}</div>
+          <div class="accum-price" id="ac-price-of-${i}">R$0,00</div>
+        </div>
+      </div>
     <div class="baixo">
       <div class="masomeno">
         <button class="btn btn-sm rm-card" id="${i}">

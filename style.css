@@ -201,7 +201,7 @@ section{
   border-bottom: var(--fivth-color) solid 3px;
 }
 
-.accum-price{
+.accum-price,.prod-p{
   width: 100px;
   height: 30px;
   border-radius:20px 20px 0px 0px;
@@ -209,6 +209,10 @@ section{
   justify-content: center;
   align-items: center;
   background-color: azure;
+}
+
+.prod-p{
+  background-color: rgb(245, 225, 114);
 }
 
 
@@ -295,7 +299,8 @@ section{
 
 .valores{
   display: flex;
-  margin: none
-  ;
+  margin: none;
+  justify-content: space-around;
+  width: 100%;
 }
 .valores * {margin : none;}
