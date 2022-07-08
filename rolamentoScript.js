@@ -17,7 +17,7 @@ const sumico = (e) => {
       let opc = ((diff / h) ** 5).toFixed(2);
       console.log("opc " + opc);
       bannier.style.opacity = opc;
-      aviso.style.opacity = opc;
+      //aviso.style.opacity = opc; 
     }
     console.log("heigth " + bannierContainer.clientHeight);
 }

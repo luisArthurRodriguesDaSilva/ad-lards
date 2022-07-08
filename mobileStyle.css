@@ -32,6 +32,13 @@ header{
   font-size: 25px;
 }
 
+#aviso{
+  background-color: rgba(8, 83, 245, 0.315);
+  max-width: 80%;
+  border-radius: 10px;
+  border: 2px solid var(--fivth-color);
+  padding: 10px;
+ }
 
 .main-top{
   display: flex;
