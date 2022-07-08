@@ -307,5 +307,7 @@ section{
   border-bottom:2px solid var(--third-color);
   border-top: 2px solid  rgba(240, 255, 255, 0.692);
 }
-.valores * {margin : none;
-margin-bottom: 1px;}
+.valores * {
+  margin : none;
+  margin-bottom: 1px;
+}
