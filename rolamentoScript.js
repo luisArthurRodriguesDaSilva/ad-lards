@@ -3,7 +3,7 @@ const bannier = document.querySelector('#bannier');
 const bannierContainer = document.querySelector('#bannierer-container');
 const cellphone = (window.matchMedia("(orientation: portrait)").matches) 
 const decrecimo =  (cellphone) ? 50*3 : 75*3;
-const h = screen.height - document.querySelector('header').clientHeight - 175 ;
+const h = screen.height*0.9 - document.querySelector('header').clientHeight - 175 ;
 
 
 bannier.style.height =  h + 'px';

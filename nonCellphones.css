@@ -36,7 +36,13 @@ header button{
   justify-content: space-around;
   gap: 10px;
 }
-
+#aviso{
+  display: block;
+  padding: 5px;
+  font-size: 2.5vh;
+  max-width: 75%;
+  align-self: flex-start;
+}
 .btn-container .total-price,.btn-container .carrinho-container
 {
   display: flex;
