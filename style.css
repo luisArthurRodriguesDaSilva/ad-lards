@@ -28,7 +28,7 @@ body{
   background: var(--main-linear-gradient);
   background-size: 400% 400%;
   background-repeat: no-repeat;
-  animation: gradient 10s ease infinite;
+  animation: gradient 7s ease infinite;
 }
 
 

@@ -10,6 +10,27 @@
 header{
   height: var(--header-height);
   border-radius: 0px 0px 5px 5px;
+
+}
+
+body{
+
+  background-size: 5000% 500%;
+  background-repeat: no-repeat;
+  animation: gradient 10s ease infinite;
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 10% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 #bannierer-container{
