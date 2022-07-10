@@ -1,4 +1,3 @@
-
 :root{
   --header-height : 75px;
 }
@@ -29,20 +28,19 @@ header button{
   min-width: 700px;
 }
 
-.btn-container
-{
+.btn-container{
   display: flex;
   align-items: center;
   justify-content: space-around;
   gap: 10px;
 }
-#aviso{
+
+.aviso{
   display: block;
   padding: 5px;
   font-size: 2.5vh;
-  max-width: 75%;
-  align-self: flex-start;
 }
+
 .btn-container .total-price,.btn-container .carrinho-container
 {
   display: flex;

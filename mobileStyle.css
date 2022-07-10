@@ -53,11 +53,9 @@ body{
   font-size: 25px;
 }
 
-#aviso{
-  background-color: rgba(8, 83, 245, 0.164);
+.aviso{
   max-width: 80%;
   border-radius: 10px;
-  border: 2px solid var(--fivth-color);
   padding: 10px;
  }
 

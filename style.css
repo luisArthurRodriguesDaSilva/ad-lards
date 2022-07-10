@@ -95,6 +95,17 @@ header{
   max-width: 70%;
 }
 
+#banner-baixo{
+  text-align: center;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  border-right: 2px solid var(--fivth-color);
+  border-left:2px solid var(--fivth-color)
+}
+
 #citacao{
   font-size: 50px;
   padding-left: 15px;
