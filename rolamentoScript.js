@@ -2,7 +2,7 @@ const aviso = document.querySelector('#aviso');
 const bannier = document.querySelector('#bannier');
 const bannierContainer = document.querySelector('#bannierer-container');
 const cellphone = (window.matchMedia("(orientation: portrait)").matches) 
-const decrecimo =  (cellphone) ? 50*3 : 75*3;
+const decrecimo =  (cellphone) ? 50*3 : 75*4;
 const h = screen.height*0.83 -document.querySelector('header').clientHeight;
 
 
