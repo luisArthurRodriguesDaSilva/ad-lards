@@ -50,6 +50,11 @@ header button{
   font-size: larger;
 }
 
+.nameOfProd{
+  max-width: 40vw;
+  text-align: center;
+}
+
 .cima img{
   margin: 5%;
   height: 25vh;

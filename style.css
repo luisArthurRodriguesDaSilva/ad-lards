@@ -28,7 +28,7 @@ body{
   background: var(--main-linear-gradient);
   background-size: 400% 400%;
   background-repeat: no-repeat;
-  animation: gradient 7s ease infinite;
+  animation: gradient 15s ease infinite;
 }
 
 
@@ -202,6 +202,9 @@ section{
   margin: 1vh;
 }
 
+.nameOfProd{
+  align-self: center;
+}
 
 .cima{
   align-items: center;
