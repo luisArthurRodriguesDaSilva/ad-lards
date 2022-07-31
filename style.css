@@ -203,6 +203,7 @@ section{
 }
 
 .nameOfProd{
+  margin: 0px 20px;
   align-self: center;
   text-align: center;
 }

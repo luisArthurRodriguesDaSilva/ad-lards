@@ -105,6 +105,10 @@ section{
   max-height: 38vh;
 }
 
+.nameOfProd{
+  margin: 10px 20px;
+}
+
 @media (min-width:700px){
 
   header{
