@@ -10,6 +10,27 @@
 header{
   height: var(--header-height);
   border-radius: 0px 0px 5px 5px;
+
+}
+
+body{
+
+  background-size: 5000% 500%;
+  background-repeat: no-repeat;
+  animation: gradient 15s ease infinite;
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 10% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 #bannierer-container{
@@ -32,6 +53,11 @@ header{
   font-size: 25px;
 }
 
+.aviso{
+  max-width: 80%;
+  border-radius: 10px;
+  padding: 10px;
+ }
 
 .main-top{
   display: flex;
@@ -77,6 +103,10 @@ section{
   margin:10px;
   max-width: 35vw;
   max-height: 38vh;
+}
+
+.nameOfProd{
+  margin: 10px 20px;
 }
 
 @media (min-width:700px){

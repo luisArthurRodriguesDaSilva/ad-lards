@@ -18,7 +18,7 @@ const createProduct = () => {
     <div class="cima">
         <img src="${tabelinha.adressesOfImg[i]}" alt="imagem do produto ${tabelinha.names[i]}" id="produto-${i}">
         
-        <p>${tabelinha.names[i]}</p>
+        <p class="nameOfProd">${tabelinha.names[i]}</p>
         <div class="valores">
           <div class="prod-p" id="price-of${i}">R$${parseFloat(tabelinha.prices[i]).toFixed(2).replace('.',',')}</div>
           <div class="accum-price" id="ac-price-of-${i}">R$0,00</div>
@@ -113,7 +113,7 @@ const changeMessageOfCardBuy = () => {
   }
 
   let convertedText = text.replaceAll(' ','%20');
-  convertedText = convertedText + `%0A(${document.querySelector('.total-price').innerHTML})`;
+  convertedText = convertedText + `%0A*(${document.querySelector('.total-price').innerHTML})*`;
   document.querySelectorAll('#comprar-carrinho').forEach(e => e.href = `https://wa.me/5522998947260?text=${convertedText}`)
   changeTotalPrice();
 }

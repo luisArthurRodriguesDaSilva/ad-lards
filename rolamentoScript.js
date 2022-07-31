@@ -2,8 +2,8 @@ const aviso = document.querySelector('#aviso');
 const bannier = document.querySelector('#bannier');
 const bannierContainer = document.querySelector('#bannierer-container');
 const cellphone = (window.matchMedia("(orientation: portrait)").matches) 
-const decrecimo =  (cellphone) ? 50*3 : 75*3;
-const h = screen.height - document.querySelector('header').clientHeight - 175 ;
+const decrecimo =  (cellphone) ? 50*3 : 75*4;
+const h = screen.height*0.83 -document.querySelector('header').clientHeight;
 
 
 bannier.style.height =  h + 'px';
@@ -17,7 +17,7 @@ const sumico = (e) => {
       let opc = ((diff / h) ** 5).toFixed(2);
       console.log("opc " + opc);
       bannier.style.opacity = opc;
-      aviso.style.opacity = opc;
+      //aviso.style.opacity = opc;    //made by my father when
     }
     console.log("heigth " + bannierContainer.clientHeight);
 }
