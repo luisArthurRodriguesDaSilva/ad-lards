@@ -1,14 +1,14 @@
 import tabelinha from './relat.js';
 const main = document.querySelector('main');
 
-const replaceLast = (str,char,newChar) => {
-  let reverted = str.split("").reverse().join("");
-  let place = reverted.indexOf(char);
-  let arraio = reverted.split("");
-  arraio[place] = newChar;
-  arraio = arraio.reverse().join("");
-  return arraio
-}
+// const replaceLast = (str,char,newChar) => {
+//   let reverted = str.split("").reverse().join("");
+//   let place = reverted.indexOf(char);
+//   let arraio = reverted.split("");
+//   arraio[place] = newChar;
+//   arraio = arraio.reverse().join("");
+//   return arraio
+// }
 
 const createProduct = () => {
   for(let i = 0; i < tabelinha.adressesOfImg.length; i+=1){
@@ -42,7 +42,7 @@ const createProduct = () => {
 const productsOfActCard = (wc) => {
   try{
   const lisOfCard = document.querySelectorAll('#carrinho-list li a')
-  return [...lisOfCard].map(e => {
+  return [...lisOfCard].map((e) => {
     let w = e.innerText;
     let firstPart = w.slice(0,w.indexOf(' '));
     let lastPart = w.slice(w.indexOf(' '),w.length);
@@ -57,7 +57,7 @@ const productsOfActCard = (wc) => {
 }
 
 const changeUnity = (id,v,span) => {
-  span.forEach(e => {e.innerHTML = `${parseInt(e.innerHTML)+v}`;
+  span.forEach((e) => {e.innerHTML = `${parseInt(e.innerHTML)+v}`;
   e.innerHTML += ' ';})
 }
 
@@ -71,7 +71,7 @@ const addRmProduct = (e) => {
   const span = document.querySelectorAll(`#spanOf${ID}`);
   const params = [ID,produto,listCard,dive,span];
 
-  lasClasses.some(el => el == 'add-card') ? addProduct(...params) : rmProduct(...params);
+  lasClasses.some((el) => el == 'add-card') ? addProduct(...params) : rmProduct(...params);
   changeAccPrice(ID);
   changeMessageOfCardBuy()
 }
@@ -80,12 +80,12 @@ const addProduct = (ID,produto,listCard,dive,span) => {
 
   dive.innerHTML = `${parseInt(dive.innerHTML)+1}`;
 
-  if(productsOfActCard(produto).some(el => el == produto)){
+  if(productsOfActCard(produto).some((el) => el == produto)){
     changeUnity(ID,1,span);
   }
   else{
-    listCard.forEach(e => {
-      const li = document.createElement("li");
+    listCard.forEach((e) => {
+      const li = document.createElement('li');
       li.innerHTML = `<a class="dropdown-item prod" href="#produto-${ID}"><span id="spanOf${ID}">1 </span>${produto}</a>`;  
       e.appendChild(li)});
   }
@@ -98,7 +98,7 @@ const rmProduct = (ID,produto,listCard,dive,span) => {
     changeUnity(ID,-1,span);
     }
     else{
-      span.forEach(e =>e.parentNode.remove());
+      span.forEach((e) =>e.parentNode.remove());
     }
     dive.innerHTML = `${parseInt(dive.innerHTML)-1}`;
   } catch(e){console.log('ja deu cr  ' + e)}
@@ -109,12 +109,12 @@ const changeMessageOfCardBuy = () => {
   const produtosComprados = document.querySelector('#carrinho-list').childNodes;
   let text = 'Quero comprar%0A%0A';
   for(let i of produtosComprados){
-    (i.innerText == undefined || i.innerText == 'comprar tudo') ? text += `` : text += `${i.innerText}%0A` ;
+    (i.innerText == undefined || i.innerText == 'comprar tudo') ? text += '' : text += `${i.innerText}%0A` ;
   }
 
   let convertedText = text.replaceAll(' ','%20');
   convertedText = convertedText + `%0A*(${document.querySelector('.total-price').innerHTML})*`;
-  document.querySelectorAll('#comprar-carrinho').forEach(e => e.href = `https://wa.me/5522998947260?text=${convertedText}`)
+  document.querySelectorAll('#comprar-carrinho').forEach((e) => e.href = `https://wa.me/5522998947260?text=${convertedText}`)
   changeTotalPrice();
 }
 
@@ -124,12 +124,12 @@ const changeTotalPrice = () => {
   let total = 0;
   let value = 0;
 
-  accumsPrices.forEach(e => {
+  accumsPrices.forEach((e) => {
     value = parseFloat(e.innerHTML.replace('R$','').replace(',','.'));
     total+=value;
   })
 
-  totalPrice.forEach(e =>e.innerHTML = `R$${total.toFixed(2)}`.replace('.',','));
+  totalPrice.forEach((e) =>e.innerHTML = `R$${total.toFixed(2)}`.replace('.',','));
   console.log(totalPrice);
 }
 
@@ -142,4 +142,4 @@ const changeAccPrice = (ID) => {
 
 createProduct();
 
-[...document.querySelectorAll('.add-card'),...document.querySelectorAll('.rm-card')].forEach( e =>  e.addEventListener('click', addRmProduct));
+[...document.querySelectorAll('.add-card'),...document.querySelectorAll('.rm-card')].forEach( (e) =>  e.addEventListener('click', addRmProduct));
