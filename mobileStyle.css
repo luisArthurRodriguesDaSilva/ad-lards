@@ -141,6 +141,7 @@ footer h5{
   text-align: center;
   font-weight: 900;
   color: rgb(255, 255, 255);
+  border: 1px solid black;
 }
 
 .boticario-btn, .boticario-btn:hover{
