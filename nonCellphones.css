@@ -74,7 +74,7 @@ footer {
 }
 
 #footer-description {
-  background-color: rgb(52, 94, 94);
+  background-color: rgba(45, 121, 121, 0.473);
   flex: 1.5 1;
 }
 
@@ -84,21 +84,22 @@ footer {
 
 #estoque-ancors-container{
   display: flex;
-  background-color: aliceblue;
+  background-color:rgba(240, 248, 255, 0.616);
   flex: 1 1;
   align-items: center;
   justify-content: space-around;
+  border-left: 1px solid black;
 }
 
 .estoque-ancor,.estoque-ancor:hover{
   text-decoration: inherit;
-  color: inherit;
-  cursor: auto;
+  color: inherit; 
+  cursor:pointer;
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
   font-style: none;
-  width: 8vw;
+  width: 10vw;
   height: fit-content;
   text-align: center;
   font-weight: 900;
