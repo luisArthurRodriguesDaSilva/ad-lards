@@ -67,26 +67,26 @@ header button{
 
 
 footer {
+  width: 100vw;
+  height: 20vh;
+  margin: 20px 0px ;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2vh;
-  margin-bottom: 10px;
-  width: 90vw;
 }
 
-footer hr{
-  display: none;
+#footer-description {
+  background-color: rgb(52, 94, 94);
+  flex: 1.5 1;
 }
 
-footer h5{
-  font-size: 15px;
-  max-width: 80vw;
+#footer-description > *{
+  margin:3vh;
 }
 
 #estoque-ancors-container{
-  width: 100vw;
   display: flex;
+  background-color: aliceblue;
+  flex: 1 1;
+  align-items: center;
   justify-content: space-around;
 }
 
@@ -94,14 +94,15 @@ footer h5{
   text-decoration: inherit;
   color: inherit;
   cursor: auto;
-  color: aliceblue;
+  border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
   font-style: none;
-  box-sizing:border-box;
+  width: 8vw;
+  height: fit-content;
   text-align: center;
-  border: 1px solid black;
-  color: black;
+  font-weight: 900;
+  color: rgb(255, 255, 255);
 }
 
 .boticario-btn, .boticario-btn:hover{
