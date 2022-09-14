@@ -141,20 +141,18 @@ footer h5{
   text-align: center;
   font-weight: 900;
   border: 1px solid black;
+  color: black;
 }
 
 .boticario-btn, .boticario-btn:hover{
-  color: rgb(255, 255, 255);
   background-color: rgb(64, 199, 109);
 }
 
 .eudora-btn, .eudora-btn:hover{
-  color: rgb(255, 255, 255);
   background-color: rgb(170, 95, 240);
 }
 
 .OUI-btn, .OUI-btn:hover{
-  color: rgb(255, 255, 255);
   background-color: rgb(196, 23, 23);
 }
 
