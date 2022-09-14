@@ -109,7 +109,7 @@ section{
   margin: 10px 20px;
 }
 
-footer {
+footer,#estoque-ancors-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,7 +127,8 @@ footer h5{
   max-width: 80vw;
 }
 
-.estoque-ancor{
+
+.estoque-ancor,.estoque-ancor:hover{
   text-decoration: inherit;
   color: inherit;
   cursor: auto;
@@ -138,27 +139,24 @@ footer h5{
   width: 80vw;
   box-sizing:border-box;
   text-align: center;
+  font-size: large;
+  border: 1px solid black;
+  color: rgb(0, 0, 0);
 }
 
-.estoque-ancor:hover{
-  border: 1px solid black;
+.boticario-btn, .boticario-btn:hover{
+  background-color: rgb(64, 199, 109);
 }
 
 .eudora-btn, .eudora-btn:hover{
-  color: aliceblue;
   background-color: rgb(130, 27, 226);
 }
 
 .OUI-btn, .OUI-btn:hover{
-  color: aliceblue;
   background-color: rgb(196, 23, 23);
 }
 
 
-.boticario-btn, .boticario-btn:hover{
-  color: aliceblue;
-  background-color: rgb(64, 199, 109);
-}
 
 
 @media (min-width:700px){
