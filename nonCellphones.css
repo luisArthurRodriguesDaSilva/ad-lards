@@ -64,3 +64,54 @@ header button{
   max-width: 90%;
   max-height: 95%;
 }
+
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2vh;
+  margin-bottom: 10px;
+  width: 90vw;
+}
+
+footer hr{
+  display: none;
+}
+
+footer h5{
+  font-size: 15px;
+  max-width: 80vw;
+}
+
+#estoque-ancors-container{
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.estoque-ancor,.estoque-ancor:hover{
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+  color: aliceblue;
+  border-radius: 5px;
+  padding: 10px;
+  font-style: none;
+  box-sizing:border-box;
+  text-align: center;
+  border: 1px solid black;
+  color: black;
+}
+
+.boticario-btn, .boticario-btn:hover{
+  background-color: rgb(64, 199, 109);
+}
+
+.eudora-btn, .eudora-btn:hover{
+  background-color: rgb(130, 27, 226);
+}
+
+.OUI-btn, .OUI-btn:hover{
+  background-color: rgb(196, 23, 23);
+}
