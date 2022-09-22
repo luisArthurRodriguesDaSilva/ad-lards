@@ -107,7 +107,7 @@ const rmProduct = (ID,produto,listCard,dive,span) => {
 
 const changeMessageOfCardBuy = () => {
   const produtosComprados = document.querySelector('#carrinho-list').childNodes;
-  let text = 'Quero comprar%0A%0A';
+  let text = 'Olá Ana Lucia, segue o meu pedido feito no site da loja%0A%0A';
   for(let i of produtosComprados){
     (i.innerText == undefined || i.innerText == 'comprar') ? text += '' : text += `${i.innerText}%0A` ;
   }
