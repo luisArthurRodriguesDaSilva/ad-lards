@@ -109,7 +109,7 @@ const changeMessageOfCardBuy = () => {
   const produtosComprados = document.querySelector('#carrinho-list').childNodes;
   let text = 'Quero comprar%0A%0A';
   for(let i of produtosComprados){
-    (i.innerText == undefined || i.innerText == 'comprar tudo') ? text += '' : text += `${i.innerText}%0A` ;
+    (i.innerText == undefined || i.innerText == 'comprar') ? text += '' : text += `${i.innerText}%0A` ;
   }
 
   let convertedText = text.replaceAll(' ','%20');
