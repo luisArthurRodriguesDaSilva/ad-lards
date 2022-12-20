@@ -6,8 +6,13 @@ from selenium.webdriver.common.by import By
 import time
 from bs4 import BeautifulSoup
 
+options = webdriver.ChromeOptions()
+options.add_argument('headless')
+options.add_argument('window-size=1920x1080')
+options.add_argument("disable-gpu")
+
 s=Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=s)
+driver = webdriver.Chrome(service=s,options=options)
 driver.maximize_window()
 
 xpathPatternPrefix = '/html/body/div[1]/div/div/div/div[3]/div/div/div[1]/span'
