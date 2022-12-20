@@ -22,9 +22,9 @@ const tabelinha = {
 'Hidratante Desodorante Corporal Instance Cereja e Amêndoas 400ml',
 'Shampoo Siàge Expert Regeneração Pós Química 250ml (Nova Versão)',
 'O.U.i Iconique 001 - Eau de Parfum Masculino, 75ml',
-'Vegano',
+'O.U.i Paradis Rouge - Loção Hidratante Desodorante Corporal 400ml',
 'O.U.i L’Expérience 706 - Eau de Parfum Masculino, 75ml',
-'Pronta-entrega']
+'EAU DE PARFUM SCAPIN 245, 75 ml']
   ,
   'prices' : ['79.9',
 '79.9',

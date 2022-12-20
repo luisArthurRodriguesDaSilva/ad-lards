@@ -42,7 +42,7 @@ def addinfo(url):
       price = driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[5]/h6').text
     except Exception as e:
       price = driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[4]/h6').text
-      name =  driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[3]/span').text
+      name =  driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[2]/span').text
     
     names.append(name)
     adresses.append(imgAdress)
