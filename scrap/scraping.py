@@ -15,12 +15,13 @@ s=Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=s,options=options)
 driver.maximize_window()
 
-xpathPatternPrefix = '/html/body/div[1]/div/div/div/div[3]/div/div/div[1]/span'
+xpathPatternPrefix = '/html/body/div[1]/div/div/div/div[4]/div/div/div/div[1]/span'
+xpathOuiQuery = '/html/body/div[1]/div/div/div/div[3]/div/div/div/div[1]/span'
 
 urls = [
-"https://minhaloja.boticario.com.br/ana-lcia/pronta-entrega",
-"https://minhaloja.eudora.com.br/clica-luar-cosmeticos/pronta-entrega",
-"https://minhaloja.ouiparis.com/ana-lcia/pronta-entrega",
+"https://minhaloja.boticario.com.br/ana-lcia/categoria?category=perfumaria",
+"https://minhaloja.eudora.com.br/clica-luar-cosmeticos/categoria?category=perfumaria",
+"https://minhaloja.ouiparis.com/ana-lcia/categoria?category=perfumaria",
 ]
 
 names = []
@@ -36,17 +37,30 @@ def addinfo(url):
   driver.get(url)
   time.sleep(3)
   for i in range(4):
-    name =  driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[3]/span').text
-    imgAdress = (driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[1]/div/img')).get_attribute("src")
     try:
-      price = driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[5]/h6').text
+      try:
+        imgAdress = (driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[1]/div/img')).get_attribute("src")
+      except Exception as e:
+        imgAdress = driver.find_element(By.XPATH,f'{xpathOuiQuery}[{i+1}]/div/div/a/div[1]/div/img').get_attribute("src")
+      try:
+        price = driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[5]/h6').text
+      except Exception as e:
+        try:
+          price = driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[4]/h6').text
+        except:
+          price = driver.find_element(By.XPATH,f'{xpathOuiQuery}[{i+1}]/div/div/a/div[5]/h6').text
+      try:
+        name =  driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[3]/span').text
+      except Exception as e:
+        try:
+          name =  driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[2]/span').text
+        except:
+          name =  driver.find_element(By.XPATH,f'{xpathOuiQuery}[{i+1}]/div/div/a/div[3]/span').text
+      names.append(name)
+      adresses.append(imgAdress)
+      prices.append(convertPrice(price))
     except Exception as e:
-      price = driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[4]/h6').text
-      name =  driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[2]/span').text
-    
-    names.append(name)
-    adresses.append(imgAdress)
-    prices.append(convertPrice(price))
+      print(e)
 
 for url in urls:
   addinfo(url)
