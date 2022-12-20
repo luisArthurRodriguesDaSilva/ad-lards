@@ -35,7 +35,7 @@ def convertPrice(precoFeio):
 def addinfo(url):
   driver.get(url)
   time.sleep(3)
-  for i in range(5):
+  for i in range(4):
     name =  driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[3]/span').text
     imgAdress = (driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[1]/div/img')).get_attribute("src")
     try:
