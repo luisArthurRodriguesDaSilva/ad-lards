@@ -69,7 +69,7 @@ prices = list(map(str, prices))
 print('prices',prices)
 
 
-with open("relat.js", 'w') as file:
+with open("src/relat.js", 'w') as file:
     file.write(
         """const tabelinha = {
             
