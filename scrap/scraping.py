@@ -24,21 +24,47 @@ urls = [
 ]
 
 names = []
-imgAdresses = []
+adresses = []
+prices= []
+
+def convertPrice(precoFeio):
+  print(precoFeio)
+  convertedprice = float(precoFeio[2:].replace(' ','').replace(',', '.'))
+  return convertedprice
 
 def addinfo(url):
   driver.get(url)
   time.sleep(3)
-  for i in range(4):
+  for i in range(5):
     name =  driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[3]/span').text
     imgAdress = (driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[1]/div/img')).get_attribute("src")
+    try:
+      price = driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[5]/h6').text
+    except Exception as e:
+      price = driver.find_element(By.XPATH,f'{xpathPatternPrefix}[{i+1}]/div/div/a/div[4]/h6').text
     names.append(name)
-    imgAdresses.append(imgAdress)
+    adresses.append(imgAdress)
+    prices.append(convertPrice(price))
 
 for url in urls:
   addinfo(url)
 
-print('names',names)
-print('imgAdress',imgAdresses)
+prices = list(map(str, prices))
+print('prices',prices)
+
+
+with open("relat.js", 'w') as file:
+    file.write(
+        """const tabelinha = {
+            
+  'adressesOfImg' :[""" + "'" + str("',\n'".join(adresses)) + "'" + """]
+  ,
+  'names' : [""" + "'" + str("',\n'".join(names)) + "'" + """]
+  ,
+  'prices' : [""" + "'" + str("',\n'".join(prices)) + "'" + """]
+};
+
+export default tabelinha;
+""")
 
 
