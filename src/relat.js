@@ -8,9 +8,6 @@ const tabelinha = {
 'https://res.cloudinary.com/beleza-na-web/image/upload/w_300,h_300,f_auto,fl_progressive,q_auto:good/v1/imagens/products/E50762/VELVET_SENSUAL_E50762.jpg',
 'https://res.cloudinary.com/beleza-na-web/image/upload/w_300,h_300,f_auto,fl_progressive,q_auto:good/v1/imagens/products/E93776/COL-KISS-ME-NOW_E93776_planta_.jpg',
 'https://res.cloudinary.com/beleza-na-web/image/upload/w_300,h_300,f_auto,fl_progressive,q_auto:good/v1/imagens/products/E49540/EAU-PERF_FEM_EDP_E49540_v4.jpg',
-'https://res.cloudinary.com/beleza-na-web/image/upload/w_300,h_300,f_auto,fl_progressive,q_auto:good/v1/imagens/products/96334/96334_a.png',
-'https://res.cloudinary.com/beleza-na-web/image/upload/w_300,h_300,f_auto,fl_progressive,q_auto:good/v1/imagens/products/85572/85572_a.png',
-'https://res.cloudinary.com/beleza-na-web/image/upload/w_300,h_300,f_auto,fl_progressive,q_auto:good/v1/imagens/products/85573/85573_a.png',
 'https://res.cloudinary.com/beleza-na-web/image/upload/w_300,h_300,f_auto,fl_progressive,q_auto:good/v1/imagens/products/85568/85568_aa.png']
   ,
   'names' : ['Quasar Rush Desodorante Colônia 100ml',
