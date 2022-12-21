@@ -10,7 +10,7 @@ ja de adianto você pode conferir ele atravéz deste [link](https://luarcosmetic
 
 ## Funcionamento
 
-Para reunir os principais produtos das 3 lojas vendidos pela Luar Cosméticos (Boticario, Eudora e OUI) o ad-lards utiliza um script em python com o selenium, assim reunindo as informações nescessárias gerando uma pagina ~~muito mais bonita~~ com os principais produtos de cada loja. **~~Boticario me contrata~~**
+Para reunir os principais produtos das 3 lojas vendidos pela Luar Cosméticos (Boticário, Eudora e OUI) o ad-lards utiliza um script em python com o selenium, assim reunindo as informações necessárias gerando uma página ~~muito mais bonita~~ com os principais produtos de cada loja. **~~Boticário me contrata~~**
 
 ## Arquivos interessantes
 
@@ -20,7 +20,7 @@ Para reunir os principais produtos das 3 lojas vendidos pela Luar Cosméticos (B
 
 ## Possíveis melhorias
 
-como eu tinha uma experiencia bem menor com programação quando começei a fazer esse site percebi pontos de melhoria que se eu soubesse no passado me pouparia bastante tempo,como os componentes react que poderiam facilmente simplificar essa parte do [script de construção](https://github.com/luisArthurRodriguesDaSilva/ad-lards/blob/master/src/script.js)
+Como eu tinha uma experiência bem menor com programação quando comecei a fazer esse site percebi pontos de melhoria que se eu soubesse no passado me pouparia bastante tempo, como os componentes React que poderiam facilmente simplificar essa parte do [script de construção](https://github.com/luisArthurRodriguesDaSilva/ad-lards/blob/master/src/script.js)
 
 ```javascript
 const createProduct = () => {
@@ -54,5 +54,5 @@ const createProduct = () => {
 }
 ```
 
-Se não viu o site ainda veja agora neste [link](https://luarcosmeticos.netlify.app/)
+Se você ainda não viu o site ainda veja agora neste [link](https://luarcosmeticos.netlify.app/)
 E se não comprou na melhor loja de cosméticos da região dos lagos, compre agora [aqui](https://luarcosmeticos.netlify.app/)
